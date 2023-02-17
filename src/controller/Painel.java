@@ -5,7 +5,12 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
+
+import dao.Conexao;
+import dao.RegistrosDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,6 +55,7 @@ public class Painel implements Initializable {
     private TextField nove;
 
     Errors erro = new Errors();
+    private Connection conexao = Conexao.getConnection();
 
     @FXML
     void clickInsta(ActionEvent event) {
@@ -73,7 +79,8 @@ public class Painel implements Initializable {
     @FXML
     void Registrar(ActionEvent event) {
 
-        Calculo c = new Calculo();
+        Calculo calculoDeGanhos = new Calculo();
+        RegistrosDao daoRegistros = new RegistrosDao();
         
             if(uber.getText().isEmpty() || nove.getText().isEmpty() || despesas.getText().isEmpty()){
                 
@@ -81,12 +88,15 @@ public class Painel implements Initializable {
 
             } else {
 
-                c.calculoTotal(Double.parseDouble(uber.getText()), Double.parseDouble(nove.getText()));
-                c.lucroTotal(c.getTotal(), Double.parseDouble(despesas.getText())); 
+                calculoDeGanhos.calculoTotal(Double.parseDouble(uber.getText()), Double.parseDouble(nove.getText()));
+                calculoDeGanhos.lucroTotal(calculoDeGanhos.getTotal(), Double.parseDouble(despesas.getText())); 
 
                 ObservableList<Calculo> list = tableView.getItems();
-                list.add(c);
+                list.add(calculoDeGanhos);
                 tableView.setItems(list); 
+                
+                daoRegistros.salvar(calculoDeGanhos);
+                
             }
         
     }
@@ -103,7 +113,6 @@ public class Painel implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         dataColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         noveColumn.setCellValueFactory(new PropertyValueFactory<>("uber"));
         uberColumn.setCellValueFactory(new PropertyValueFactory<>("nove"));
