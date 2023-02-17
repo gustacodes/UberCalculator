@@ -49,6 +49,8 @@ public class Painel implements Initializable {
     @FXML
     private TextField nove;
 
+    Errors erro = new Errors();
+
     @FXML
     void clickInsta(ActionEvent event) {
 
@@ -57,7 +59,7 @@ public class Painel implements Initializable {
         try {
             desktop.browse(new URI("https://www.instagram.com/_gustalencar/"));
         } catch (IOException | URISyntaxException e) {
-            
+            erro.abrirLink();
         }
         
     }
@@ -72,8 +74,7 @@ public class Painel implements Initializable {
     void Registrar(ActionEvent event) {
 
         Calculo c = new Calculo();
-        Errors erro = new Errors();
-
+        
             if(uber.getText().isEmpty() || nove.getText().isEmpty() || despesas.getText().isEmpty()){
                 
                 erro.alertaCampoVazio();
@@ -100,7 +101,6 @@ public class Painel implements Initializable {
 
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -109,8 +109,7 @@ public class Painel implements Initializable {
         uberColumn.setCellValueFactory(new PropertyValueFactory<>("nove"));
         despesaColumn.setCellValueFactory(new PropertyValueFactory<>("despesas"));
         totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
-        lucroColumn.setCellValueFactory(new PropertyValueFactory<>("lucro"));
-             
+        lucroColumn.setCellValueFactory(new PropertyValueFactory<>("lucro"));             
     }
 
 }

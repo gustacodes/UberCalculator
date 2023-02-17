@@ -23,4 +23,13 @@ public class Errors {
         a.setContentText("Verifique se algum dos campos está vazio.");
         a.showAndWait();
     }
+
+    public void abrirLink(){
+        Alert a = new Alert(AlertType.ERROR);
+
+        a.setTitle("Error");
+        a.setHeaderText("Falha ao abrir");
+        a.setContentText("Houve uma falha ao tentar abrir a página.");
+        a.showAndWait();
+    }
 }
