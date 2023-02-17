@@ -5,11 +5,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
-
-import dao.Conexao;
 import dao.RegistrosDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -55,7 +51,6 @@ public class Painel implements Initializable {
     private TextField nove;
 
     Errors erro = new Errors();
-    private Connection conexao = Conexao.getConnection();
 
     @FXML
     void clickInsta(ActionEvent event) {
@@ -97,8 +92,7 @@ public class Painel implements Initializable {
                 
                 daoRegistros.salvar(calculoDeGanhos);
                 
-            }
-        
+            }        
     }
 
     @FXML
