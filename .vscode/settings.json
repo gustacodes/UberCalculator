@@ -1,0 +1,22 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx.base.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx.controls.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx.fxml.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx.graphics.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx.media.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx.swing.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx.web.jar",
+            "c:\\Program Files\\Java\\javafx-19\\lib\\javafx-swt.jar"
+        ],
+        "exclude": [
+            "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar",
+            "c:\\Program Files\\Java\\javafx-sdk-18.0.1\\lib\\javafx.base.jar"
+        ]
+    },
+    "git.ignoreLimitWarning": true
+}
