@@ -18,9 +18,9 @@ public class VeiculoDao {
 
             PreparedStatement stm = conexao.prepareStatement(sql);
 
-            stm.setString(1, carro.getPlaca());
-            stm.setString(2, carro.getMarca());
-            stm.setString(3, carro.getModelo());
+            stm.setString(1, carro.getPlaca().toUpperCase());
+            stm.setString(2, carro.getMarca().toUpperCase());
+            stm.setString(3, carro.getModelo().toUpperCase());
 
             stm.execute();
             stm.close();

@@ -7,20 +7,22 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import dao.RegistrosDao;
-import dao.VeiculoDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Calculo;
 import model.Errors;
-import model.Veiculo;
 
-public class Painel implements Initializable {
+public class PainelController implements Initializable {
 
     @FXML
     private TableView<Calculo> tableView;
@@ -73,10 +75,18 @@ public class Painel implements Initializable {
     }
 
     @FXML
-    void cadastrarVeiculo(ActionEvent event) {
-        Veiculo carro = new Veiculo("ORG-6885", "FORD", "NEW FIESA");
-        VeiculoDao daoVeiculo = new VeiculoDao();
-        daoVeiculo.cadastrarVeiculo(carro);
+    void cadastrarVeiculo(ActionEvent event) throws IOException {
+
+        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/cadastroveiculo.fxml"));
+        Parent root = fxml.load();
+        Scene tela = new Scene(root);
+
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Cadastro veículo");
+        primaryStage.setScene(tela);
+        primaryStage.show();
+        primaryStage.setResizable(false);
+
     }
 
     @FXML

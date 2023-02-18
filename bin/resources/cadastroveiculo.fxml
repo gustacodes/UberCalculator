@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroVeiculoController">
    <children>
       <Text layoutX="6.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro veículo">
          <font>
