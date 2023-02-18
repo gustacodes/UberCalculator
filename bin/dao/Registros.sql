@@ -9,3 +9,12 @@ CREATE TABLE REGISTROS (
 
 SELECT * FROM REGISTROS;
 DROP TABLE REGISTROS;
+
+CREATE TABLE VEICULO (
+	placa varchar(10) primary key,
+    marca varchar(20),
+    modelo varchar(30)
+);
+
+SELECT * FROM VEICULO;
+DROP TABLE VEICULO;

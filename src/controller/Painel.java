@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import dao.RegistrosDao;
+import dao.VeiculoDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Calculo;
 import model.Errors;
+import model.Veiculo;
 
 public class Painel implements Initializable {
 
@@ -65,20 +67,50 @@ public class Painel implements Initializable {
         
     }
 
-
     @FXML
-    void Fechamento(ActionEvent event) {
+    void alterar(ActionEvent event) {
 
     }
 
     @FXML
-    void Registrar(ActionEvent event) {
+    void cadastrarVeiculo(ActionEvent event) {
+        Veiculo carro = new Veiculo("ORG-6885", "FORD", "NEW FIESA");
+        VeiculoDao daoVeiculo = new VeiculoDao();
+        daoVeiculo.cadastrarVeiculo(carro);
+    }
+
+    @FXML
+    void consultarGanhos(ActionEvent event) {
+
+    }
+
+    @FXML
+    void consumoVeiculo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void fecharMes(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gerarRelatorio(ActionEvent event) {
+
+    }
+
+    @FXML
+    void manutencaoVeiculo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void registrar(ActionEvent event) {
 
         Calculo calculoDeGanhos = new Calculo();
         RegistrosDao daoRegistros = new RegistrosDao();
         
-            if(uber.getText().isEmpty() || nove.getText().isEmpty() || despesas.getText().isEmpty()){
-                
+            if(uber.getText().isEmpty() || nove.getText().isEmpty() || despesas.getText().isEmpty()){                
                 erro.alertaCampoVazio();
 
             } else {
@@ -90,23 +122,13 @@ public class Painel implements Initializable {
                 list.add(calculoDeGanhos);
                 tableView.setItems(list); 
                 
-                daoRegistros.salvar(calculoDeGanhos);
-                
+                daoRegistros.salvar(calculoDeGanhos);                
             }        
-    }
-
-    @FXML
-    void gerarRelatorio(ActionEvent event) {
-
-    }
-
-    @FXML
-    void atual(ActionEvent event) {
-
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
         dataColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         noveColumn.setCellValueFactory(new PropertyValueFactory<>("uber"));
         uberColumn.setCellValueFactory(new PropertyValueFactory<>("nove"));

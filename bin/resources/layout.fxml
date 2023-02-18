@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -12,44 +13,49 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Painel">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Painel">
    <children>
-      <Text layoutX="219.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UBER CALCULATOR" wrappingWidth="161.65081787109375">
+      <Text layoutX="329.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UBER CALCULATOR" wrappingWidth="236.85079956054688">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="80.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a Uber:" />
-      <Text layoutX="284.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a 99:" />
-      <TextField fx:id="uber" layoutX="80.0" layoutY="94.0" prefHeight="26.0" prefWidth="63.0" promptText="R$ 0,00" />
-      <TextField fx:id="nove" layoutX="284.0" layoutY="93.0" prefHeight="26.0" prefWidth="63.0" promptText="R$ 0,00" />
-      <Button layoutX="254.0" layoutY="427.0" mnemonicParsing="false" onAction="#Registrar" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: #2E8B57;" text="REGISTRAR" textFill="WHITE">
+      <Text layoutX="210.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a Uber:" />
+      <Text layoutX="414.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a 99:" />
+      <Text layoutX="632.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas:" />
+      <TextField fx:id="uber" alignment="CENTER" layoutX="216.0" layoutY="122.0" prefHeight="26.0" prefWidth="94.0" promptText="R$ 0,00" />
+      <TextField fx:id="nove" alignment="CENTER" layoutX="415.0" layoutY="121.0" prefHeight="26.0" prefWidth="94.0" promptText="R$ 0,00" />
+      <TextField fx:id="despesas" alignment="CENTER" layoutX="617.0" layoutY="120.0" prefHeight="26.0" prefWidth="86.0" promptText="R$ 0,00" />
+      <Button layoutX="383.0" layoutY="174.0" mnemonicParsing="false" onAction="#registrar" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: #2E8B57;" text="REGISTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Text layoutX="487.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas:" />
-      <TextField fx:id="despesas" layoutX="487.0" layoutY="92.0" prefHeight="26.0" prefWidth="63.0" promptText="R$ 0,00" />
-      <TableView fx:id="tableView" layoutX="20.0" layoutY="150.0" prefHeight="270.0" prefWidth="601.0">
+      <TableView fx:id="tableView" layoutX="58.0" layoutY="276.0" prefHeight="323.0" prefWidth="778.0">
         <columns>
-          <TableColumn fx:id="dataColumn" prefWidth="98.39996719360352" text="DATA" />
-          <TableColumn fx:id="noveColumn" prefWidth="80.800048828125" text="99" />
-            <TableColumn fx:id="uberColumn" prefWidth="94.39994812011719" text="UBER" />
-            <TableColumn fx:id="despesaColumn" prefWidth="108.00006103515625" text="DESPESAS" />
-            <TableColumn fx:id="totalColumn" prefWidth="111.2000732421875" text="TOTAL" />
-            <TableColumn fx:id="lucroColumn" prefWidth="109.5999755859375" text="LUCRO" />
+          <TableColumn fx:id="dataColumn" prefWidth="117.60001373291016" text="DATA" />
+          <TableColumn fx:id="noveColumn" prefWidth="117.60000610351562" text="99" />
+            <TableColumn fx:id="uberColumn" prefWidth="132.00006103515625" text="UBER" />
+            <TableColumn fx:id="despesaColumn" prefWidth="146.39999389648438" text="DESPESAS" />
+            <TableColumn fx:id="totalColumn" prefWidth="131.199951171875" text="TOTAL" />
+            <TableColumn fx:id="lucroColumn" prefWidth="132.0" text="LUCRO" />
         </columns>
       </TableView>
-      <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="641.0">
+      <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="891.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Arquivo">
+          <Menu mnemonicParsing="false" text="Veículo">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#gerarRelatorio" text="Gerar PDF" />
+                  <MenuItem mnemonicParsing="false" onAction="#alterar" text="Alterar" />
+              <MenuItem mnemonicParsing="false" onAction="#cadastrarVeiculo" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" onAction="#consumoVeiculo" text="Consumo" />
+                  <MenuItem mnemonicParsing="false" onAction="#manutencaoVeiculo" text="Manutenção" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Registros">
+          <Menu mnemonicParsing="false" text="Financeiro">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#atual" text="Mês atual" />
+              <MenuItem mnemonicParsing="false" onAction="#consultarGanhos" text="Consultar" />
+                  <MenuItem mnemonicParsing="false" onAction="#gerarRelatorio" text="Gerar PDF" />
+                  <MenuItem mnemonicParsing="false" onAction="#fecharMes" text="Fechar mês" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Sobre">
@@ -59,7 +65,16 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Text fill="#433636" layoutX="5.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Developed by:" />
-      <Hyperlink layoutX="82.0" layoutY="464.0" onAction="#clickInsta" text="\@_gustalencar" />
+      <Text fill="#c9bebe" layoutX="3.0" layoutY="617.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Developed by:">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Text>
+      <Hyperlink layoutX="74.0" layoutY="601.0" onAction="#clickInsta" text="\@_gustalencar" />
+      <Text layoutX="405.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTROS">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Separator layoutX="137.0" layoutY="228.0" prefHeight="2.0" prefWidth="639.0" />
    </children>
 </AnchorPane>
