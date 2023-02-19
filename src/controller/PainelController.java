@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Calculo;
-import model.Errors;
+import model.Alertas;
 
 public class PainelController implements Initializable {
 
@@ -54,7 +54,7 @@ public class PainelController implements Initializable {
     @FXML
     private TextField nove;
 
-    Errors erro = new Errors();
+    Alertas erro = new Alertas();
 
     @FXML
     void clickInsta(ActionEvent event) {
@@ -93,10 +93,20 @@ public class PainelController implements Initializable {
     void consultarGanhos(ActionEvent event) {
 
     }
-
+    
     @FXML
-    void consumoVeiculo(ActionEvent event) {
+    void consumoVeiculo(ActionEvent event) throws IOException {
 
+        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/consumos.fxml"));
+        Parent root = fxml.load();
+        Scene tela = new Scene(root);
+
+        Stage primaryStage = new Stage();
+
+        primaryStage.setTitle("Consumos");
+        primaryStage.setScene(tela);
+        primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
     @FXML

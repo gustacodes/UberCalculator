@@ -3,7 +3,7 @@ package model;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class Errors {
+public class Alertas {
     
     public void alertaNegativo() {
         Alert a = new Alert(AlertType.ERROR);
@@ -31,5 +31,13 @@ public class Errors {
         a.setHeaderText("Falha ao abrir");
         a.setContentText("Houve uma falha ao tentar abrir a página.");
         a.showAndWait();
+    }
+
+    public void numerosNegativos() {
+            Alert alert = new Alert(AlertType.ERROR);
+            
+            alert.setHeaderText("Error");
+            alert.setContentText("Digite valores maiores que 0.");
+            alert.showAndWait();
     }
 }

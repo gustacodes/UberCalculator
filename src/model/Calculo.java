@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Calculo {
 
-    Errors error = new Errors();
+    Alertas error = new Alertas();
 
     Date data = new Date();
     SimpleDateFormat fd = new SimpleDateFormat("dd/MM/yyyy");

@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import model.Errors;
+import model.Alertas;
 import model.Veiculo;
 
 public class CadastroVeiculoController {
@@ -25,7 +25,7 @@ public class CadastroVeiculoController {
 
         if(marcaVeiculo.getText().isEmpty() || modeloVeiculo.getText().isEmpty() || placaVeiculo.getText().isEmpty()){
 
-            Errors erro = new Errors();
+            Alertas erro = new Alertas();
             erro.alertaCampoVazio();
 
         } else {
