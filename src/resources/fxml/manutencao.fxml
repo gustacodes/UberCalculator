@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -10,37 +10,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConsumosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Manutencao">
    <children>
-      <TabPane layoutY="47.0" prefHeight="200.0" prefWidth="587.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="47.0" prefHeight="303.0" prefWidth="587.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Troca de óleo">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="553.0">
                      <children>
-                        <Text layoutX="219.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cacular consumo médio">
+                        <Text layoutX="241.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados da troca">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Text>
-                        <Text layoutX="227.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KM:">
+                        <Text layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KM ATUAL DO VEÍCULO:">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="kmMedio" alignment="CENTER" layoutX="209.0" layoutY="72.0" prefHeight="26.0" prefWidth="58.0" promptText="230KM" />
-                        <Text layoutX="320.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTD/L">
+                        <TextField fx:id="proxTroca" alignment="CENTER" layoutX="252.0" layoutY="97.0" prefHeight="26.0" prefWidth="70.0" promptText="10.000" />
+                        <Text layoutX="253.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantos Km:" />
+                        <Button layoutX="229.0" layoutY="136.0" mnemonicParsing="false" onAction="#trocaOleo" prefHeight="38.0" prefWidth="126.0" text="Registrar" />
+                        <Text layoutX="210.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
                            <font>
-                              <Font name="System Bold" size="12.0" />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
-                        <Button layoutX="225.0" layoutY="110.0" mnemonicParsing="false" onAction="#calculoMedio" prefHeight="38.0" prefWidth="126.0" text="Calcular" />
-                        <TextField fx:id="qtdLtMedio" alignment="CENTER" layoutX="309.0" layoutY="72.0" prefHeight="26.0" prefWidth="58.0" promptText="16L" />
-                        <Hyperlink layoutX="499.0" layoutY="148.0" onAction="#comofunciona" text="Como funciona?">
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </Hyperlink>
+                        <ProgressBar fx:id="progresso" layoutX="120.0" layoutY="226.0" prefHeight="18.0" prefWidth="348.0" progress="0.9" />
                      </children>
                   </AnchorPane>
             </content>
@@ -78,22 +74,12 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Text layoutX="211.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcular consumos">
+      <Text layoutX="226.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manutenção">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
       <Separator layoutX="15.0" layoutY="34.0" prefHeight="0.0" prefWidth="559.0" />
-      <Separator layoutX="14.0" layoutY="245.0" prefHeight="0.0" prefWidth="559.0" />
-      <Text fx:id="resultadoConsumoMedio" fill="#131313" layoutX="114.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="448.5366516113281">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Text>
-      <Text fx:id="resultadoConsumoViagem" fill="#131313" layoutX="41.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="539.7366333007812">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Text>
+      <Separator layoutX="13.0" layoutY="267.0" prefHeight="0.0" prefWidth="559.0" />
    </children>
 </AnchorPane>

@@ -115,8 +115,18 @@ public class PainelController implements Initializable {
     }
 
     @FXML
-    void manutencaoVeiculo(ActionEvent event) {
+    void manutencaoVeiculo(ActionEvent event) throws IOException {
+        
+        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/manutencao.fxml"));
+        Parent root = fxml.load();
+        Scene tela = new Scene(root);
 
+        Stage primaryStage = new Stage();
+
+        primaryStage.setTitle("Manutenção");
+        primaryStage.setScene(tela);
+        primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
     @FXML

@@ -41,7 +41,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="24.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Combustível:">
+      <Text layoutX="34.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Combustível:">
          <font>
             <Font size="14.0" />
          </font>
