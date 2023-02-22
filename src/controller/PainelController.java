@@ -46,6 +46,9 @@ public class PainelController implements Initializable {
     private TableColumn<Calculo, Double> uberColumn;
 
     @FXML
+    private TextField kmDia;
+
+    @FXML
     private TextField despesas;
 
     @FXML
@@ -116,7 +119,7 @@ public class PainelController implements Initializable {
 
     @FXML
     void manutencaoVeiculo(ActionEvent event) throws IOException {
-        
+
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/manutencao.fxml"));
         Parent root = fxml.load();
         Scene tela = new Scene(root);
@@ -132,6 +135,10 @@ public class PainelController implements Initializable {
     @FXML
     void registrar(ActionEvent event) {
 
+        /*                      CÁLCULO PARA O PROGRESSBAR
+         * Por exemplo, 15 representa 25% de 60, pois 15/60 = 0,25 (0,25 x 100 = 25%).
+         */
+
         Calculo calculoDeGanhos = new Calculo();
         RegistrosDao daoRegistros = new RegistrosDao();
         
@@ -141,7 +148,8 @@ public class PainelController implements Initializable {
             } else {
 
                 calculoDeGanhos.calculoTotal(Double.parseDouble(uber.getText()), Double.parseDouble(nove.getText()));
-                calculoDeGanhos.lucroTotal(calculoDeGanhos.getTotal(), Double.parseDouble(despesas.getText())); 
+                calculoDeGanhos.lucroTotal(calculoDeGanhos.getTotal(), Double.parseDouble(despesas.getText()));
+                calculoDeGanhos.setKmDia(Double.parseDouble(kmDia.getText())); 
 
                 ObservableList<Calculo> list = tableView.getItems();
                 list.add(calculoDeGanhos);

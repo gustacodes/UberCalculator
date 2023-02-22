@@ -12,7 +12,7 @@ public class RegistrosDao {
 
     public void salvar(Calculo dados) {
 
-        String sql = "INSERT INTO REGISTROS VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO REGISTROS VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         try {
 
@@ -24,6 +24,7 @@ public class RegistrosDao {
             statement.setDouble(4, dados.getDespesas());
             statement.setDouble(5, dados.getTotal());
             statement.setDouble(6, dados.getLucro());
+            statement.setDouble(7, dados.getKmDia());
 
             statement.execute();
             statement.close();

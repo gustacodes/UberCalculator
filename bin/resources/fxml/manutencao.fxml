@@ -36,7 +36,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
-                        <ProgressBar fx:id="progresso" layoutX="120.0" layoutY="226.0" prefHeight="18.0" prefWidth="348.0" progress="0.9" />
+                        <ProgressBar fx:id="progresso" layoutX="120.0" layoutY="226.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
                      </children>
                   </AnchorPane>
             </content>

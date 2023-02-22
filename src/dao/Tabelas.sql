@@ -4,7 +4,8 @@ CREATE TABLE REGISTROS (
     nove double,
     despesa double,
     total double,
-    lucro double    
+    lucro double,
+    kmDia double
 );
 
 SELECT * FROM REGISTROS;

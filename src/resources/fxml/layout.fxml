@@ -20,21 +20,27 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="210.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a Uber:">
+      <Text layoutX="111.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a Uber:">
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Text layoutX="414.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a 99:">
+      <Text layoutX="315.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos com a 99:">
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Text layoutX="632.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas:">
+      <Text layoutX="533.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas:">
          <font>
             <Font size="14.0" />
          </font></Text>
-      <TextField fx:id="uber" alignment="CENTER" layoutX="224.0" layoutY="122.0" prefHeight="26.0" prefWidth="94.0" promptText="R$ 0,00" />
-      <TextField fx:id="nove" alignment="CENTER" layoutX="420.0" layoutY="122.0" prefHeight="26.0" prefWidth="94.0" promptText="R$ 0,00" />
-      <TextField fx:id="despesas" alignment="CENTER" layoutX="617.0" layoutY="120.0" prefHeight="26.0" prefWidth="86.0" promptText="R$ 0,00" />
+      <Text layoutX="715.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km/Dia">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="uber" alignment="CENTER" layoutX="125.0" layoutY="128.0" prefHeight="26.0" prefWidth="94.0" promptText="R$ 0,00" />
+      <TextField fx:id="nove" alignment="CENTER" layoutX="321.0" layoutY="128.0" prefHeight="26.0" prefWidth="94.0" promptText="R$ 0,00" />
+      <TextField fx:id="despesas" alignment="CENTER" layoutX="518.0" layoutY="126.0" prefHeight="26.0" prefWidth="86.0" promptText="R$ 0,00" />
+      <TextField fx:id="kmDia" alignment="CENTER" layoutX="697.0" layoutY="125.0" prefHeight="26.0" prefWidth="86.0" promptText="Km/Dia" />
       <Button layoutX="383.0" layoutY="174.0" mnemonicParsing="false" onAction="#registrar" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: #2E8B57;" text="REGISTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />

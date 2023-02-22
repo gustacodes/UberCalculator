@@ -18,18 +18,28 @@ public class Calculo {
     private double despesas;
     private double total = 0.0;
     private double lucro = 0.0;
+    private double kmDia = 0.0;
 
     public Calculo() {
 
     }
 
-    public Calculo(String date, double uber, double nove, double despesas, double total, double lucro) {
+    public Calculo(String date, double uber, double nove, double despesas, double total, double lucro, double kmDia) {
         this.date = date;
         this.uber = uber;
         this.nove = nove;
         this.despesas = despesas;
         this.total = total;
         this.lucro = lucro;
+        this.kmDia = kmDia;
+    }
+    
+    public double getKmDia() {
+        return kmDia;
+    }
+
+    public void setKmDia(double kmDia) {
+        this.kmDia = kmDia;
     }
 
     public double getUber() {
@@ -116,4 +126,5 @@ public class Calculo {
         }
 
     }
+
 }
