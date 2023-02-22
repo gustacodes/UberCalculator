@@ -50,9 +50,6 @@
                               <Font size="14.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="kmViagem" alignment="CENTER" layoutX="183.0" layoutY="74.0" prefHeight="26.0" prefWidth="62.0" promptText="KM" />
-                        <TextField fx:id="kmLitro" alignment="CENTER" layoutX="261.0" layoutY="73.0" prefHeight="26.0" prefWidth="62.0" promptText="KM/L" />
-                        <TextField fx:id="precoCombustivel" alignment="CENTER" layoutX="340.0" layoutY="73.0" prefHeight="26.0" prefWidth="62.0" promptText="R$ 0,00" />
                         <Text layoutX="204.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KM">
                            <font>
                               <Font name="System Bold" size="12.0" />
@@ -68,7 +65,6 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Text>
-                        <Button layoutX="242.0" layoutY="117.0" mnemonicParsing="false" onAction="#consumoViagem" prefHeight="39.0" prefWidth="102.0" text="Calcular" />
                      </children></AnchorPane>
             </content>
           </Tab>
