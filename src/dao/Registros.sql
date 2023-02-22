@@ -13,7 +13,9 @@ DROP TABLE REGISTROS;
 CREATE TABLE VEICULO (
 	placa varchar(10) primary key,
     marca varchar(20),
-    modelo varchar(30)
+    modelo varchar(30),
+    kmRodados double,
+    combustivel varchar(10)
 );
 
 SELECT * FROM VEICULO;

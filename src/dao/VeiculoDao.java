@@ -12,7 +12,7 @@ public class VeiculoDao {
 
     public void cadastrarVeiculo(Veiculo carro) {
 
-        String sql = "INSERT INTO VEICULO VALUES(?, ?, ?)";
+        String sql = "INSERT INTO VEICULO VALUES(?, ?, ?, ?, ?)";
 
         try {
 
@@ -21,6 +21,8 @@ public class VeiculoDao {
             stm.setString(1, carro.getPlaca().toUpperCase());
             stm.setString(2, carro.getMarca().toUpperCase());
             stm.setString(3, carro.getModelo().toUpperCase());
+            stm.setDouble(4, carro.getKmRodados());
+            stm.setString(5, carro.getCombustivel());
 
             stm.execute();
             stm.close();

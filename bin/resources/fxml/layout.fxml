@@ -54,7 +54,6 @@
         <menus>
           <Menu mnemonicParsing="false" text="Veículo">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#alterar" text="Alterar" />
               <MenuItem mnemonicParsing="false" onAction="#cadastrarVeiculo" text="Cadastrar" />
                   <MenuItem mnemonicParsing="false" onAction="#consumoVeiculo" text="Consumo" />
                   <MenuItem mnemonicParsing="false" onAction="#manutencaoVeiculo" text="Manutenção" />

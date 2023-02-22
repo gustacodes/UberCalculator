@@ -70,11 +70,6 @@ public class PainelController implements Initializable {
     }
 
     @FXML
-    void alterar(ActionEvent event) {
-
-    }
-
-    @FXML
     void cadastrarVeiculo(ActionEvent event) throws IOException {
 
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/cadastroveiculo.fxml"));

@@ -14,7 +14,7 @@
    <children>
       <TabPane layoutY="47.0" prefHeight="200.0" prefWidth="587.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Médio">
+          <Tab text="Troca de óleo">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
