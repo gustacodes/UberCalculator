@@ -15,7 +15,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import model.TrocaOleo;
 
-public class Manutencao implements Initializable {
+public class ManutencaoController implements Initializable {
 
     @FXML
     private ProgressBar progresso;
