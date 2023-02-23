@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Manutencao">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManutencaoController">
    <children>
       <TabPane layoutY="47.0" prefHeight="303.0" prefWidth="587.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -18,7 +18,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="553.0">
                      <children>
-                        <Text layoutX="241.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados da troca">
+                        <Text layoutX="241.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status da troca">
                            <font>
                               <Font size="14.0" />
                            </font>

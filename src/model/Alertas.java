@@ -12,7 +12,6 @@ public class Alertas {
         a.setHeaderText("Informe apenas números positivos");
         a.setContentText("Números negativos não serão computados.");
         a.showAndWait();
-
     }
 
     public void alertaCampoVazio() {
@@ -34,10 +33,26 @@ public class Alertas {
     }
 
     public void numerosNegativos() {
-            Alert alert = new Alert(AlertType.ERROR);
+        Alert alert = new Alert(AlertType.ERROR);
+        
+        alert.setHeaderText("Error");
+        alert.setContentText("Digite valores maiores que 0.");
+        alert.showAndWait();
+    }
+
+    public void proximaTrocaPerto(){
+        Alert alert = new Alert(AlertType.INFORMATION);
             
-            alert.setHeaderText("Error");
-            alert.setContentText("Digite valores maiores que 0.");
-            alert.showAndWait();
+        alert.setHeaderText("Troca de óleo do motor");
+        alert.setContentText("A próxima troca de óleo está perto. Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
+        alert.showAndWait();
+    }
+
+    public void proximaTroca(){
+        Alert alert = new Alert(AlertType.WARNING);
+            
+        alert.setHeaderText("Troca de óleo do motor necessária");
+        alert.setContentText("Está na hora da próxima troca de óleo. Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
+        alert.showAndWait();
     }
 }

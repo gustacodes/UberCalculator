@@ -6,6 +6,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import dao.ManutencaoDao;
 import dao.RegistrosDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Calculo;
+import model.TrocaOleo;
 import model.Alertas;
 
 public class PainelController implements Initializable {
@@ -105,6 +108,7 @@ public class PainelController implements Initializable {
         primaryStage.setScene(tela);
         primaryStage.show();
         primaryStage.setResizable(false);
+
     }
 
     @FXML
@@ -132,14 +136,15 @@ public class PainelController implements Initializable {
         primaryStage.setResizable(false);
     }
 
+    Calculo calculoDeGanhos = new Calculo();
+    ManutencaoDao daoManutencao = new ManutencaoDao();
+    TrocaOleo oleoTroca = new TrocaOleo();
+    Alertas alert = new Alertas();
+
     @FXML
     void registrar(ActionEvent event) {
 
-        /*                      CÁLCULO PARA O PROGRESSBAR
-         * Por exemplo, 15 representa 25% de 60, pois 15/60 = 0,25 (0,25 x 100 = 25%).
-         */
-
-        Calculo calculoDeGanhos = new Calculo();
+        
         RegistrosDao daoRegistros = new RegistrosDao();
         
             if(uber.getText().isEmpty() || nove.getText().isEmpty() || despesas.getText().isEmpty()){                
@@ -155,19 +160,27 @@ public class PainelController implements Initializable {
                 list.add(calculoDeGanhos);
                 tableView.setItems(list); 
                 
-                daoRegistros.salvar(calculoDeGanhos);                
+                daoRegistros.salvar(calculoDeGanhos);
+                daoManutencao.salvarKmTroca(Double.parseDouble(kmDia.getText()));
+                
+                    if(oleoTroca.verificaTroca() >= 1) {
+                        alert.proximaTroca();            
+                    } else if(oleoTroca.verificaTroca() >= 0.8) { 
+                        alert.proximaTrocaPerto(); 
+                    }
             }        
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
         dataColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         noveColumn.setCellValueFactory(new PropertyValueFactory<>("uber"));
         uberColumn.setCellValueFactory(new PropertyValueFactory<>("nove"));
         despesaColumn.setCellValueFactory(new PropertyValueFactory<>("despesas"));
         totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
-        lucroColumn.setCellValueFactory(new PropertyValueFactory<>("lucro"));             
-    }
+        lucroColumn.setCellValueFactory(new PropertyValueFactory<>("lucro")); 
+
+   }                    
 
 }

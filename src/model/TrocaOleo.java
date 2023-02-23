@@ -1,25 +1,35 @@
 package model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import dao.Conexao;
+
 public class TrocaOleo {
-    private double kmAtual = 1000;
-    private double proxTroca = 10.000;
+
+    private double kmDoDia;
+    private double proxTroca;
     private double total;
+    private double proxTrocaDao = 0;
+    private double kmDoDiaDao = 0;
+    private double media = 0;
 
     public TrocaOleo(){
 
     }
 
-    public TrocaOleo(double kmAtual, double proxTroca) {
-        this.kmAtual = kmAtual;
+    public TrocaOleo(double kmDoDia, double proxTroca) {
+        this.kmDoDia = kmDoDia;
         this.proxTroca = proxTroca;
     }
 
-    public double getKmAtual() {
-        return kmAtual;
+    public double getkmDoDia() {
+        return kmDoDia;
     }
 
-    public void setKmAtual(double kmAtual) {
-        this.kmAtual = kmAtual;
+    public void setkmDoDia(double kmDoDia) {
+        this.kmDoDia = kmDoDia;
     }
 
     public double getProxTroca() {
@@ -38,9 +48,64 @@ public class TrocaOleo {
         this.total = total;
     }
 
-    public double ProgressBar(double atualKm, double trocaProx) {
-        total = trocaProx / atualKm;
-        return 0;
+    public double getKmDoDia() {
+        return kmDoDia;
+    }
+    public void setKmDoDia(double kmDoDia) {
+        this.kmDoDia = kmDoDia;
+    }
+
+    public double getProxTrocaDao() {
+        return proxTrocaDao;
+    }
+
+    public void setProxTrocaDao(double proxTrocaDao) {
+        this.proxTrocaDao = proxTrocaDao;
+    }
+
+    public double getKmDoDiaDao() {
+        return kmDoDiaDao;
+    }
+
+    public void setKmDoDiaDao(double kmDoDiaDao) {
+        this.kmDoDiaDao = kmDoDiaDao;
+    }    
+
+    public double ProximaTroca(double atualKm, double trocaProx) {  
+        this.kmDoDia = atualKm;      
+        return total = (atualKm / trocaProx) / 100;
+    }
+
+    private Connection conexao = Conexao.getConnection();
+
+    public double verificaTroca(){
+
+        String sql = "SELECT * FROM TROCAOLEO";
+        double aux = 0;
+
+        try {
+
+            PreparedStatement stm = conexao.prepareStatement(sql);
+            ResultSet result = stm.executeQuery();
+
+                while(result.next()) {     
+                    proxTrocaDao = result.getDouble("kmProxTroca");               
+                    kmDoDiaDao += result.getDouble("kmDoDia"); 
+                    
+                        if(proxTrocaDao > 0){
+                            aux = proxTrocaDao;
+                        }  
+                                                     
+                }               
+                
+                media = (kmDoDiaDao / aux) / 100;
+                kmDoDiaDao = 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return media;
     }
 
 }

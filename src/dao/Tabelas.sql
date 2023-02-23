@@ -23,7 +23,7 @@ SELECT * FROM VEICULO;
 DROP TABLE VEICULO;
 
 CREATE TABLE TROCAOLEO (
-	kmMarcado double,
+	kmDoDia double,
 	kmProxTroca double
 );
 

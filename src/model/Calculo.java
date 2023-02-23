@@ -18,7 +18,7 @@ public class Calculo {
     private double despesas;
     private double total = 0.0;
     private double lucro = 0.0;
-    private double kmDia = 0.0;
+    public static double kmDia = 0.0;
 
     public Calculo() {
 
@@ -92,7 +92,7 @@ public class Calculo {
 
     DecimalFormat df = new DecimalFormat("###.00");
 
-    public Double calculoTotal(double uberValor, double noveValor) {
+    public double calculoTotal(double uberValor, double noveValor) {
 
         if(uberValor >= 0 && noveValor >= 0){
             this.uber = uberValor;
@@ -110,7 +110,7 @@ public class Calculo {
 
     }
 
-    public Double lucroTotal(double totalDoDia, double despesa) {
+    public double lucroTotal(double totalDoDia, double despesa) {
 
         if(totalDoDia >= 0 && despesa >= 0) {
             this.despesas = despesa;
