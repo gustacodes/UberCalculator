@@ -36,19 +36,15 @@ public class ManutencaoController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         if(proximaTroca.verificaTroca() >= 1) {            
-
             progresso.setStyle("-fx-accent: red;");
             
-         } else if(proximaTroca.verificaTroca() >= 0.8){
- 
+         } else if(proximaTroca.verificaTroca() >= 0.8){ 
              progresso.setStyle("-fx-accent: yellow;");
  
          } else {
-
              progresso.setStyle("-fx-accent: #00FF00;");
 
          }
-
             progresso.setProgress(proximaTroca.verificaTroca());
         
         

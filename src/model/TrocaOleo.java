@@ -94,8 +94,7 @@ public class TrocaOleo {
                     
                         if(proxTrocaDao > 0){
                             aux = proxTrocaDao;
-                        }  
-                                                     
+                        }                                                       
                 }               
                 
                 media = (kmDoDiaDao / aux) / 100;
@@ -107,5 +106,4 @@ public class TrocaOleo {
 
         return media;
     }
-
 }
