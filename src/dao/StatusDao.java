@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import banco.Conexao;
+
 public class StatusDao {
 
     private double kmDoDiaDao = 0;

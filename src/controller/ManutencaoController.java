@@ -96,8 +96,7 @@ public class ManutencaoController implements Initializable {
             statusCabos.setStyle("-fx-accent: #00FF00;");    
         }    
         
-            statusCabos.setProgress(status.verificaTrocaCabos());
-                   
+            statusCabos.setProgress(status.verificaTrocaCabos());                   
         
     }
 

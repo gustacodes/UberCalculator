@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import banco.Conexao;
 import model.Manutencao;
 
 public class ManutencaoDao {

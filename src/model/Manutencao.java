@@ -46,9 +46,4 @@ public class Manutencao {
         this.kmDoDia = kmDoDia;
     }
 
-    public double ProximaTroca(double atualKm, double trocaProx) {  
-        this.kmDoDia = atualKm;      
-        return total = (atualKm / trocaProx) / 100;
-    }
-
 }

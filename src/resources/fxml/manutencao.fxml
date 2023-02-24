@@ -54,6 +54,5 @@
          </font>
       </Text>
       <ProgressBar fx:id="statusCabos" layoutX="131.0" layoutY="363.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
-      <Separator layoutX="-6.0" layoutY="8.0" prefHeight="3.0" prefWidth="598.0" />
    </children>
 </AnchorPane>

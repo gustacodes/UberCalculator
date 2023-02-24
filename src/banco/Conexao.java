@@ -1,4 +1,4 @@
-package dao;
+package banco;
 
 import javax.swing.*;
 import java.sql.Connection;
