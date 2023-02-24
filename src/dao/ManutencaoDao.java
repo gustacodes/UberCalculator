@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import model.TrocaOleo;
+import model.Manutencao;
 
 public class ManutencaoDao {
 
@@ -12,7 +12,7 @@ public class ManutencaoDao {
     
     public void salvarKmTroca(double troca) {
         
-        String sql = "INSERT INTO TROCAOLEO (kmDoDia) VALUES (?)";
+        String sql = "INSERT INTO MANUTENCAO (kmDoDia) VALUES (?)";
 
         try {
 
@@ -28,15 +28,51 @@ public class ManutencaoDao {
         }
     }
 
-    public void salvarKmProximaTroca(TrocaOleo troca) {
+    public void salvarKmProximaTrocaOleo(Manutencao trocaOleo) {
         
-        String sql = "INSERT INTO TROCAOLEO (kmProxTroca) VALUES (?)";
+        String sql = "INSERT INTO MANUTENCAO (kmProxTrocaOleo) VALUES (?)";
 
         try {
 
             PreparedStatement statement = conexao.prepareStatement(sql);
 
-            statement.setDouble(1, troca.getProxTroca());
+            statement.setDouble(1, trocaOleo.getProxTroca());
+
+            statement.execute();
+            statement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void salvarKmProximaTrocaCorreia(Manutencao trocaCorreia) {
+
+        String sql = "INSERT INTO MANUTENCAO (kmProxTrocaCorreia) VALUES (?)";
+
+        try {
+
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            statement.setDouble(1, trocaCorreia.getProxTroca());
+
+            statement.execute();
+            statement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void salvarKmProximaTrocaCabos(Manutencao trocaCabos) {
+
+        String sql = "INSERT INTO MANUTENCAO (kmProxTrocaCabos) VALUES (?)";
+
+        try {
+
+            PreparedStatement statement = conexao.prepareStatement(sql);
+
+            statement.setDouble(1, trocaCabos.getProxTroca());
 
             statement.execute();
             statement.close();

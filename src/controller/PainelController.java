@@ -6,9 +6,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import dao.ManutencaoDao;
 import dao.RegistrosDao;
+import dao.StatusDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +22,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Calculo;
-import model.TrocaOleo;
 import model.Alertas;
 
 public class PainelController implements Initializable {
@@ -138,12 +137,11 @@ public class PainelController implements Initializable {
 
     Calculo calculoDeGanhos = new Calculo();
     ManutencaoDao daoManutencao = new ManutencaoDao();
-    TrocaOleo oleoTroca = new TrocaOleo();
+    StatusDao status = new StatusDao();
     Alertas alert = new Alertas();
 
     @FXML
     void registrar(ActionEvent event) {
-
         
         RegistrosDao daoRegistros = new RegistrosDao();
         
@@ -163,10 +161,22 @@ public class PainelController implements Initializable {
                 daoRegistros.salvar(calculoDeGanhos);
                 daoManutencao.salvarKmTroca(Double.parseDouble(kmDia.getText()));
                 
-                    if(oleoTroca.verificaTroca() >= 1) {
-                        alert.proximaTroca();            
-                    } else if(oleoTroca.verificaTroca() >= 0.8) { 
-                        alert.proximaTrocaPerto(); 
+                    if(status.verificaTrocaOleo() >= 1) {
+                        alert.oleoTroca();            
+                    } else if(status.verificaTrocaOleo() >= 0.8) { 
+                        alert.trocaOleoPerto(); 
+                    }
+
+                    if(status.verificaTrocaCorreia() >= 1) {
+                        alert.CorreiaTroca();            
+                    } else if(status.verificaTrocaCorreia() >= 0.8) { 
+                        alert.trocaCorreiaPerto(); 
+                    }
+
+                    if(status.verificaTrocaCabos() >= 1) {
+                        alert.CabosTroca();        
+                    } else if(status.verificaTrocaCabos() >= 0.8) { 
+                        alert.trocaCabosPerto(); 
                     }
             }        
     }
@@ -179,7 +189,7 @@ public class PainelController implements Initializable {
         uberColumn.setCellValueFactory(new PropertyValueFactory<>("nove"));
         despesaColumn.setCellValueFactory(new PropertyValueFactory<>("despesas"));
         totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
-        lucroColumn.setCellValueFactory(new PropertyValueFactory<>("lucro")); 
+        lucroColumn.setCellValueFactory(new PropertyValueFactory<>("lucro"));
 
    }                    
 

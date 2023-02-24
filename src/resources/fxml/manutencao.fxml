@@ -3,79 +3,57 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManutencaoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManutencaoController">
    <children>
-      <TabPane layoutY="47.0" prefHeight="303.0" prefWidth="587.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Troca de óleo">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="553.0">
-                     <children>
-                        <Text layoutX="241.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status da troca">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KM ATUAL DO VEÍCULO:">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="proxTroca" alignment="CENTER" layoutX="252.0" layoutY="97.0" prefHeight="26.0" prefWidth="70.0" promptText="10.000" />
-                        <Text layoutX="253.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantos Km:" />
-                        <Button layoutX="229.0" layoutY="136.0" mnemonicParsing="false" onAction="#trocaOleo" prefHeight="38.0" prefWidth="126.0" text="Registrar" />
-                        <Text layoutX="210.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                        <ProgressBar fx:id="progresso" layoutX="120.0" layoutY="226.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Viagem">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Text layoutX="216.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cacular consumo viagem">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="204.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KM">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="274.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KM/L">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="351.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREÇO">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Text>
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-      <Text layoutX="226.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manutenção">
+      <Separator layoutX="-12.0" layoutY="137.0" prefHeight="3.0" prefWidth="605.0" />
+      <Separator layoutX="-7.0" layoutY="262.0" prefHeight="3.0" prefWidth="598.0" />
+      <Button layoutX="95.0" layoutY="64.0" mnemonicParsing="false" onAction="#trocaOleo" prefHeight="26.0" prefWidth="68.0" text="Registrar" />
+      <TextField fx:id="proxTroca" alignment="CENTER" layoutX="16.0" layoutY="64.0" prefHeight="26.0" prefWidth="70.0" promptText="10.000" />
+      <Text layoutX="18.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
+      <Text layoutX="209.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Separator layoutX="15.0" layoutY="34.0" prefHeight="0.0" prefWidth="559.0" />
-      <Separator layoutX="13.0" layoutY="267.0" prefHeight="0.0" prefWidth="559.0" />
+      <ProgressBar fx:id="statusOleo" layoutX="129.0" layoutY="109.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
+      <Text layoutX="17.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Óleo">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="20.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correia">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="100.0" layoutY="189.0" mnemonicParsing="false" onAction="#trocaCorreia" prefHeight="26.0" prefWidth="68.0" text="Registrar" />
+      <TextField fx:id="proxTrocaCorreia" alignment="CENTER" layoutX="21.0" layoutY="189.0" prefHeight="26.0" prefWidth="70.0" promptText="100.000" />
+      <Text layoutX="22.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
+      <Text layoutX="209.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ProgressBar fx:id="statusCorreia" layoutX="129.0" layoutY="233.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
+      <Text layoutX="21.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cabos/velas">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="102.0" layoutY="319.0" mnemonicParsing="false" onAction="#trocaCabos" prefHeight="26.0" prefWidth="68.0" text="Registrar" />
+      <TextField fx:id="proxTrocaCabos" alignment="CENTER" layoutX="23.0" layoutY="319.0" prefHeight="26.0" prefWidth="70.0" promptText="50.000" />
+      <Text layoutX="22.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
+      <Text layoutX="211.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ProgressBar fx:id="statusCabos" layoutX="131.0" layoutY="363.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
+      <Separator layoutX="-6.0" layoutY="8.0" prefHeight="3.0" prefWidth="598.0" />
    </children>
 </AnchorPane>

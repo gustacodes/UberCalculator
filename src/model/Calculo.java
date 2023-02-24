@@ -18,7 +18,7 @@ public class Calculo {
     private double despesas;
     private double total = 0.0;
     private double lucro = 0.0;
-    public static double kmDia = 0.0;
+    public double kmDia = 0.0;
 
     public Calculo() {
 

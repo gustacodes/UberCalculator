@@ -3,50 +3,101 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import dao.ManutencaoDao;
+import dao.StatusDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import model.Alertas;
-import model.TrocaOleo;
+import model.Manutencao;
 
 public class ManutencaoController implements Initializable {
 
     @FXML
-    private ProgressBar progresso;
+    private ProgressBar statusOleo;
 
     @FXML
     private TextField proxTroca;
 
-    Alertas alerta = new Alertas();
-    TrocaOleo proximaTroca = new TrocaOleo();
+    @FXML
+    private TextField proxTrocaCabos;
 
     @FXML
-    void trocaOleo(ActionEvent event) {
+    private TextField proxTrocaCorreia;
 
-        ManutencaoDao daoManutencao = new ManutencaoDao();
+    @FXML
+    private ProgressBar statusCabos;
+
+    @FXML
+    private ProgressBar statusCorreia;    
+
+    Alertas alerta = new Alertas();
+    Manutencao proximaTroca = new Manutencao();
+    ManutencaoDao daoManutencao = new ManutencaoDao();
+
+    @FXML
+    void trocaCabos(ActionEvent event) {
+        proximaTroca.setProxTroca(Double.parseDouble(proxTrocaCabos.getText()));
+        daoManutencao.salvarKmProximaTrocaCabos(proximaTroca);
+        alerta.registroTrocas();
+    }
+
+    @FXML
+    void trocaCorreia(ActionEvent event) {
+        proximaTroca.setProxTroca(Double.parseDouble(proxTrocaCorreia.getText()));
+        daoManutencao.salvarKmProximaTrocaCorreia(proximaTroca);
+        alerta.registroTrocas();
+    }
+
+    @FXML
+    void trocaOleo(ActionEvent event) {                
         proximaTroca.setProxTroca(Double.parseDouble(proxTroca.getText()));
-
-        daoManutencao.salvarKmProximaTroca(proximaTroca);
-
+        daoManutencao.salvarKmProximaTrocaOleo(proximaTroca);
+        alerta.registroTrocas();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        if(proximaTroca.verificaTroca() >= 1) {            
-            progresso.setStyle("-fx-accent: red;");
+        StatusDao status = new StatusDao();
+
+        if(status.verificaTrocaOleo() >= 1) {            
+            statusOleo.setStyle("-fx-accent: red;");
             
-         } else if(proximaTroca.verificaTroca() >= 0.8){ 
-             progresso.setStyle("-fx-accent: yellow;");
+         } else if(status.verificaTrocaOleo() >= 0.8){ 
+            statusOleo.setStyle("-fx-accent: yellow;");
  
          } else {
-             progresso.setStyle("-fx-accent: #00FF00;");
+            statusOleo.setStyle("-fx-accent: #00FF00;");
 
          }
-            progresso.setProgress(proximaTroca.verificaTroca());
+            statusOleo.setProgress(status.verificaTrocaOleo());
+
+        if(status.verificaTrocaCorreia() >= 1) {            
+            statusCorreia.setStyle("-fx-accent: red;");
+            
+        } else if(status.verificaTrocaCorreia() >= 0.8){ 
+            statusCorreia.setStyle("-fx-accent: yellow;");
+ 
+        } else {
+            statusCorreia.setStyle("-fx-accent: #00FF00;");    
+         }
+
+            statusCorreia.setProgress(status.verificaTrocaCorreia());            
+
+        if(status.verificaTrocaCabos() >= 1) {            
+            statusCabos.setStyle("-fx-accent: red;");
+            
+        } else if(status.verificaTrocaCabos() >= 0.8){ 
+            statusCabos.setStyle("-fx-accent: yellow;");
+     
+        } else {
+            statusCabos.setStyle("-fx-accent: #00FF00;");    
+        }    
         
+            statusCabos.setProgress(status.verificaTrocaCabos());
+                   
         
     }
 

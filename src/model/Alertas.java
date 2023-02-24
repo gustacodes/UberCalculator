@@ -40,7 +40,7 @@ public class Alertas {
         alert.showAndWait();
     }
 
-    public void proximaTrocaPerto(){
+    public void trocaOleoPerto(){
         Alert alert = new Alert(AlertType.INFORMATION);
             
         alert.setHeaderText("Troca de óleo do motor");
@@ -48,11 +48,52 @@ public class Alertas {
         alert.showAndWait();
     }
 
-    public void proximaTroca(){
+    public void oleoTroca(){
         Alert alert = new Alert(AlertType.WARNING);
             
         alert.setHeaderText("Troca de óleo do motor necessária");
-        alert.setContentText("Está na hora da próxima troca de óleo. Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
+        alert.setContentText("Está na hora da próxima troca de óleo.\n Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
         alert.showAndWait();
     }
+
+    public void trocaCorreiaPerto(){
+        Alert alert = new Alert(AlertType.INFORMATION);
+            
+        alert.setHeaderText("Troca da correia do motor");
+        alert.setContentText("A próxima troca da correia está perto. Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
+        alert.showAndWait();
+    }
+
+    public void CorreiaTroca(){
+        Alert alert = new Alert(AlertType.WARNING);
+            
+        alert.setHeaderText("Troca da correia do motor necessária");
+        alert.setContentText("Está na hora de trocar a correia de acordo com a kilometragem. Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
+        alert.showAndWait();
+    }
+
+    public void trocaCabosPerto(){
+        Alert alert = new Alert(AlertType.INFORMATION);
+            
+        alert.setHeaderText("Troca dos cabos/velas do motor");
+        alert.setContentText("A próxima troca dos cabos e velas está perto. Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
+        alert.showAndWait();
+    }
+
+    public void CabosTroca(){
+        Alert alert = new Alert(AlertType.WARNING);
+            
+        alert.setHeaderText("Troca dos cabos/velas do motor necessária");
+        alert.setContentText("Está na hora de trocar os cabos e velas de acordo com a kilometragem. Verifique no menu 'Veículo' e depois 'Manutenção' para conferir os status.");
+        alert.showAndWait();
+    }
+
+    public void registroTrocas() {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+            
+        alert.setHeaderText("Kilometragem registrada");
+        alert.setContentText("Você será notificado de acordo com a proximidade da troca.");
+        alert.showAndWait();
+    }
+
 }

@@ -84,7 +84,7 @@
             <Font name="System Italic" size="12.0" />
          </font></Text>
       <Hyperlink layoutX="74.0" layoutY="601.0" onAction="#clickInsta" text="\@_gustalencar" />
-      <Text layoutX="405.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTROS">
+      <Text layoutX="351.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTROS RECENTES">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
