@@ -1,3 +1,4 @@
+package controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +20,7 @@ public class App extends Application {
         App.primaryStage = primaryStage;
         App.primaryStage.getIcons().add(new Image("/resources/icone/uber.png"));
 
-        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/layout.fxml"));
+        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/inicial.fxml"));
         Parent root = fxml.load();
         Scene tela = new Scene(root);
 
@@ -27,6 +28,8 @@ public class App extends Application {
         primaryStage.setScene(tela);
         primaryStage.show();
         primaryStage.setResizable(false);
+
+        App.primaryStage.setOnCloseRequest(e -> System.exit(0));
         
     }
 }

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="600.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistrosController">
+   <children>
+      <Text layoutX="14.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uber">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="uberGanhos" alignment="CENTER" layoutX="14.0" layoutY="77.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="noveGanhos" alignment="CENTER" layoutX="166.0" layoutY="77.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="#fbff04" layoutX="165.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="99">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="inGanhos" alignment="CENTER" layoutX="325.0" layoutY="77.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="#05ff10" layoutX="325.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="InDriver">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="outrosGanhos" alignment="CENTER" layoutX="498.0" layoutY="77.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="498.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Outros">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Pane layoutX="1.0" prefHeight="30.0" prefWidth="600.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="WHITE" layoutX="181.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GANHOS COM OS APLICATIVOS">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutY="133.0" prefHeight="30.0" prefWidth="600.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="WHITE" layoutX="231.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESPESAS DO DIA">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="16.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Combust.">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="despeCombus" alignment="CENTER" layoutX="16.0" layoutY="211.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="166.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Refeições">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="despeRefeicoes" alignment="CENTER" layoutX="166.0" layoutY="211.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="325.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lavagem">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="despeLavagem" alignment="CENTER" layoutX="325.0" layoutY="211.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="495.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manut.">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="despeManut" alignment="CENTER" layoutX="497.0" layoutY="211.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="R$ 0.00">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Button layoutX="212.0" layoutY="391.0" mnemonicParsing="false" onAction="#registrarDados" prefHeight="46.0" prefWidth="176.0" style="-fx-background-color: #00FF00;" text="REGISTRAR" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Pane layoutY="264.0" prefHeight="30.0" prefWidth="600.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="WHITE" layoutX="238.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OUTROS DADOS">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="16.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km rodados">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="kmRodados" alignment="CENTER" layoutX="16.0" layoutY="329.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="0.00KM">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="252.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horas trab.">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="hrsTrabalhadas" alignment="CENTER" layoutX="252.0" layoutY="330.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="0.00h">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" layoutX="497.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viagens">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="viagensDia" alignment="CENTER" layoutX="497.0" layoutY="326.0" opacity="0.5" prefHeight="35.0" prefWidth="88.0" promptText="0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

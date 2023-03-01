@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="764.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+   <children>
+      <Pane layoutX="14.0" layoutY="41.0" prefHeight="66.0" prefWidth="211.0" style="-fx-background-color: #32CD32;">
+         <children>
+            <Text fx:id="txtFaturamento" fill="#fafafa" layoutX="74.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="54.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faturamento">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="38.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="562.0" layoutY="126.0" prefHeight="193.0" prefWidth="176.0" style="-fx-background-color: #3CB371;">
+         <children>
+            <Text fx:id="txtMetaDiaria" fill="#fafafa" layoutX="54.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="25.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="META DIÁRIA">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="10.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="32.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="266.0" layoutY="41.0" prefHeight="66.0" prefWidth="211.0" style="-fx-background-color: #FF0000;">
+         <children>
+            <Text fx:id="txtDepesas" fill="#fafafa" layoutX="86.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="66.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="50.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="127.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="32.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total de viagens">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtViagens" fill="WHITE" layoutX="78.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="197.0" layoutY="127.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="26.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horas trabalhadas">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtHoras" fill="WHITE" layoutX="59.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="103.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="380.0" layoutY="126.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="26.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Km rodados">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtKmRodados" fill="WHITE" layoutX="34.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="78.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="228.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="15.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos méd. viagens">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtGanhosMedViagens" fill="WHITE" layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="24.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="197.0" layoutY="228.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="22.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos méd. hora">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtGanhosMedHora" fill="WHITE" layoutX="50.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="19.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="380.0" layoutY="228.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="26.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos méd. Km">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtGanhosMedKm" fill="WHITE" layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="26.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="527.0" layoutY="41.0" prefHeight="66.0" prefWidth="211.0" style="-fx-background-color: #1E90FF;">
+         <children>
+            <Text fx:id="txtSaldo" fill="#fafafa" layoutX="89.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="86.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="53.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="13.0" layoutY="331.0" prefHeight="28.0" prefWidth="729.0" style="-fx-background-color: #2F4F4F;">
+         <children>
+            <Text fill="#e4e4e4" layoutX="239.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FATURAMENTO POR APLICATIVO">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="12.0" layoutY="362.0" prefHeight="163.0" prefWidth="730.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text layoutX="21.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uber">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#ffea00" layoutX="21.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="99">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <ProgressBar fx:id="progressUber" layoutX="21.0" layoutY="21.0" prefHeight="15.0" prefWidth="593.0" progress="0.0" />
+            <Text fill="#00ff15" layoutX="21.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="InDriver">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <ProgressBar fx:id="progressNove" layoutX="21.0" layoutY="60.0" prefHeight="15.0" prefWidth="593.0" progress="0.0" />
+            <ProgressBar fx:id="progressInDriver" layoutX="21.0" layoutY="100.0" prefHeight="15.0" prefWidth="593.0" progress="0.0" />
+            <Text fill="WHITE" layoutX="21.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Outros">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <ProgressBar fx:id="progressOutros" layoutX="21.0" layoutY="138.0" prefHeight="15.0" prefWidth="593.0" progress="0.0" />
+            <Text fx:id="porcentagemUber" layoutX="635.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="porcentagemNove" fill="#ffea00" layoutX="635.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="porcentagemInDriver" fill="#00ff15" layoutX="635.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="porcentagemOutros" fill="WHITE" layoutX="635.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <MenuBar layoutY="-1.0" prefHeight="26.0" prefWidth="764.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Financeiro">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#periodo" text="Período" />
+                  <MenuItem mnemonicParsing="false" onAction="#metas" text="Metas" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Manutenção">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cabos" text="Cabos/velas" />
+                  <MenuItem mnemonicParsing="false" onAction="#correia" text="Correia" />
+                  <MenuItem mnemonicParsing="false" onAction="#oleo" text="Óleo" />
+                  <MenuItem mnemonicParsing="false" onAction="#outros" text="Outros..." />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Consumos">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#consumoViagens" text="Consumo Viagens" />
+                  <MenuItem mnemonicParsing="false" onAction="#consumoMedio" text="Consumo Médio" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Outros">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#contato" text="Contato" />
+              <MenuItem mnemonicParsing="false" onAction="#sobre" text="Sobre" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="197.0" layoutY="534.0" mnemonicParsing="false" onAction="#registrar" prefHeight="46.0" prefWidth="176.0" style="-fx-background-color: #00FF00;" text="ADICIONAR" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="396.0" layoutY="534.0" mnemonicParsing="false" onAction="#excluir" prefHeight="46.0" prefWidth="176.0" style="-fx-background-color: #FF0000;" text="EXCLUIR" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Text fill="#8c8c8c" layoutX="3.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Developed by ">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Text>
+      <Hyperlink layoutX="73.0" layoutY="564.0" onAction="#clickInsta" text="\@_gustalencar" />
+   </children>
+</AnchorPane>

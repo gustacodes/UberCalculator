@@ -12,26 +12,30 @@ public class Calculo {
     SimpleDateFormat fd = new SimpleDateFormat("dd/MM/yyyy");
 
     private String date = fd.format(data);
-
     private double uber;
     private double nove;
-    private double despesas;
+    private double inDriver;
+    private double outros;
     private double total = 0.0;
     private double lucro = 0.0;
-    public double kmDia = 0.0;
+    private double kmDia = 0.0;
+    private double horasTrabalhadas = 0.0;
+    private int viagens;
 
     public Calculo() {
 
     }
 
-    public Calculo(String date, double uber, double nove, double despesas, double total, double lucro, double kmDia) {
+    public Calculo(String date, double uber, double nove, double inDriver, double total, double lucro, double kmDia, double horasTrabalhadas, int viagens) {
         this.date = date;
         this.uber = uber;
         this.nove = nove;
-        this.despesas = despesas;
+        this.inDriver = inDriver;
         this.total = total;
         this.lucro = lucro;
         this.kmDia = kmDia;
+        this.horasTrabalhadas = horasTrabalhadas;
+        this.viagens = viagens;
     }
     
     public double getKmDia() {
@@ -58,14 +62,6 @@ public class Calculo {
         this.nove = nove;
     }
 
-    public double getDespesas() {
-        return despesas;
-    }
-
-    public void setDespesas(double despesas) {
-        this.despesas = despesas;
-    }
-
     public double getTotal() {
         return total;
     }
@@ -90,15 +86,50 @@ public class Calculo {
         this.date = date;
     }
 
+    public double getInDriver() {
+        return inDriver;
+    }
+
+    public void setInDriver(double inDriver) {
+        this.inDriver = inDriver;
+    }
+
+    public double getOutros() {
+        return outros;
+    }
+
+    public void setOutros(double outros) {
+        this.outros = outros;
+    }
+
+    
+    public double getHorasTrabalhadas() {
+        return horasTrabalhadas;
+    }
+
+    public void setHorasTrabalhadas(double horasTrabalhadas) {
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+
+    public int getViagens() {
+        return viagens;
+    }
+
+    public void setViagens(int viagens) {
+        this.viagens = viagens;
+    }
+
     DecimalFormat df = new DecimalFormat("###.00");
 
-    public double calculoTotal(double uberValor, double noveValor) {
+    public double calculoTotal(double uberValor, double noveValor, double inDriverValor, double outrosValor) {
 
-        if(uberValor >= 0 && noveValor >= 0){
+        if(uberValor >= 0 && noveValor >= 0 && inDriverValor >= 0 && outrosValor >= 0){
             this.uber = uberValor;
             this.nove = noveValor;
+            this.inDriver = inDriverValor;
+            this.outros = outrosValor;
 
-            df.format(total = uberValor + noveValor);
+            df.format(total = uberValor + noveValor + inDriverValor + outrosValor);
 
             return total;
 
@@ -110,12 +141,11 @@ public class Calculo {
 
     }
 
-    public double lucroTotal(double totalDoDia, double despesa) {
+    public double lucroTotal(double totalDoDia, Despesas despesa) {
 
-        if(totalDoDia >= 0 && despesa >= 0) {
-            this.despesas = despesa;
+        if(totalDoDia >= 0 && despesa.getTotalDespesas() >= 0) {
 
-            df.format(lucro = totalDoDia - despesa);
+            df.format(lucro = totalDoDia - despesa.getTotalDespesas());
             
             return lucro;
 

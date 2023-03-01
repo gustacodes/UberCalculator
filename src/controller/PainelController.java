@@ -6,10 +6,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import dao.ManutencaoDao;
-import dao.RegistrosDao;
-import dao.StatusDao;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -135,50 +131,10 @@ public class PainelController implements Initializable {
         primaryStage.setResizable(false);
     }
 
-    Calculo calculoDeGanhos = new Calculo();
-    ManutencaoDao daoManutencao = new ManutencaoDao();
-    StatusDao status = new StatusDao();
-    Alertas alert = new Alertas();
-
     @FXML
     void registrar(ActionEvent event) {
         
-        RegistrosDao daoRegistros = new RegistrosDao();
         
-            if(uber.getText().isEmpty() || nove.getText().isEmpty() || despesas.getText().isEmpty()){                
-                erro.alertaCampoVazio();
-
-            } else {
-
-                calculoDeGanhos.calculoTotal(Double.parseDouble(uber.getText()), Double.parseDouble(nove.getText()));
-                calculoDeGanhos.lucroTotal(calculoDeGanhos.getTotal(), Double.parseDouble(despesas.getText()));
-                calculoDeGanhos.setKmDia(Double.parseDouble(kmDia.getText())); 
-
-                ObservableList<Calculo> list = tableView.getItems();
-                list.add(calculoDeGanhos);
-                tableView.setItems(list); 
-                
-                daoRegistros.salvar(calculoDeGanhos);
-                daoManutencao.salvarKmTroca(Double.parseDouble(kmDia.getText()));
-                
-                    if(status.verificaTrocaOleo() >= 1) {
-                        alert.oleoTroca();            
-                    } else if(status.verificaTrocaOleo() >= 0.8) { 
-                        alert.trocaOleoPerto(); 
-                    }
-
-                    if(status.verificaTrocaCorreia() >= 1) {
-                        alert.CorreiaTroca();            
-                    } else if(status.verificaTrocaCorreia() >= 0.8) { 
-                        alert.trocaCorreiaPerto(); 
-                    }
-
-                    if(status.verificaTrocaCabos() >= 1) {
-                        alert.CabosTroca();        
-                    } else if(status.verificaTrocaCabos() >= 0.8) { 
-                        alert.trocaCabosPerto(); 
-                    }
-            }        
     }
 
     @Override
