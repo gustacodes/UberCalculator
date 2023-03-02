@@ -6,9 +6,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javax.swing.JOptionPane;
-
 import dao.DespesasDao;
 import dao.MetasDao;
 import dao.RegistrosDao;
@@ -21,7 +18,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Alertas;
 import model.Registros;
-import model.Despesas;
 import view.Janelas;
 
 public class HomeController implements Initializable {
@@ -84,6 +80,7 @@ public class HomeController implements Initializable {
     private Text txtViagens;
 
     private Janelas tela = new Janelas();
+    Alertas erro = new Alertas();
 
     @FXML
     void cabos(ActionEvent event) {
@@ -91,9 +88,7 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    void clickInsta(ActionEvent event) {
-
-        Alertas erro = new Alertas();
+    void clickInsta(ActionEvent event) {        
         
         Desktop desktop = Desktop.getDesktop();
 
@@ -175,6 +170,10 @@ public class HomeController implements Initializable {
         txtMetaDiaria.setText(String.valueOf(daoMeta.lerMetas().getMetaDiaria()));
 
         RegistrosDao daoRegistros = new RegistrosDao();
+
+            if(daoRegistros.lerRegistros().getTotal() >= daoMeta.lerMetas().getMetaDiaria()){
+                erro.metaDiariaBatida();
+            }
 
         txtFaturamento.setText(String.valueOf(daoRegistros.lerRegistros().getTotal()));
         txtSaldo.setText(String.valueOf(daoRegistros.lerRegistros().getLucro()));

@@ -96,4 +96,12 @@ public class Alertas {
         alert.showAndWait();
     }
 
+    public void metaDiariaBatida() {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+            
+        alert.setHeaderText("META ATINGIDA!");
+        alert.setContentText("PARABÉNS!\nVocê atingiu a meta diária de hoje.");
+        alert.showAndWait();
+    }
+
 }

@@ -87,7 +87,7 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtViagens" fill="WHITE" layoutX="78.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+            <Text fx:id="txtViagens" fill="WHITE" layoutX="76.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -120,12 +120,12 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtKmRodados" fill="WHITE" layoutX="34.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtKmRodados" fill="WHITE" layoutX="38.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="88.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
+            <Text fill="WHITE" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -139,12 +139,12 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtGanhosMedViagens" fill="WHITE" layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtGanhosMedViagens" fill="WHITE" layoutX="70.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="24.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="WHITE" layoutX="40.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -158,12 +158,12 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtGanhosMedHora" fill="WHITE" layoutX="50.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtGanhosMedHora" fill="WHITE" layoutX="72.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="19.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="WHITE" layoutX="41.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -177,12 +177,12 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtGanhosMedKm" fill="WHITE" layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtGanhosMedKm" fill="WHITE" layoutX="72.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="26.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="WHITE" layoutX="44.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
