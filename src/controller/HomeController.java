@@ -162,34 +162,41 @@ public class HomeController implements Initializable {
 		stage.close();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    static boolean bol = false;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {    
+        
         MetasDao daoMeta = new MetasDao();
 
         txtMetaDiaria.setText(String.valueOf(daoMeta.lerMetas().getMetaDiaria()));
 
-        RegistrosDao daoRegistros = new RegistrosDao();
+        if(bol == true) {
 
-            if(daoRegistros.lerRegistros().getTotal() >= daoMeta.lerMetas().getMetaDiaria()){
-                erro.metaDiariaBatida();
-            }
+            RegistrosDao daoRegistros = new RegistrosDao();
 
-        txtFaturamento.setText(String.valueOf(daoRegistros.lerRegistros().getTotal()));
-        txtSaldo.setText(String.valueOf(daoRegistros.lerRegistros().getLucro()));
-        txtViagens.setText(String.valueOf(daoRegistros.lerRegistros().getViagens()));
-        txtHoras.setText(String.valueOf(daoRegistros.lerRegistros().getHorasTrabalhadas()));
-        txtKmRodados.setText(String.valueOf(daoRegistros.lerRegistros().getKmDia()));
+                if(daoRegistros.lerRegistros().getTotal() >= daoMeta.lerMetas().getMetaDiaria()){
+                    erro.metaDiariaBatida();
+                }
 
-        DespesasDao daoDespesas = new DespesasDao();
+            txtFaturamento.setText(String.valueOf(daoRegistros.lerRegistros().getTotal()));
+            txtSaldo.setText(String.valueOf(daoRegistros.lerRegistros().getLucro()));
+            txtViagens.setText(String.valueOf(daoRegistros.lerRegistros().getViagens()));
+            txtHoras.setText(String.valueOf(daoRegistros.lerRegistros().getHorasTrabalhadas()));
+            txtKmRodados.setText(String.valueOf(daoRegistros.lerRegistros().getKmDia()));
 
-        txtDepesas.setText(String.valueOf(daoDespesas.lerDespesas().getTotalDespesas()));
+            DespesasDao daoDespesas = new DespesasDao();
 
-        Registros medias = new Registros();
+            txtDepesas.setText(String.valueOf(daoDespesas.lerDespesas().getTotalDespesas()));
 
-        txtGanhosMedViagens.setText(String.valueOf(medias.mediaViagens()));
-        txtGanhosMedHora.setText(String.valueOf(medias.mediaHora()));
-        txtGanhosMedKm.setText(String.valueOf(medias.mediaKm()));
+            Registros medias = new Registros();
+
+            txtGanhosMedViagens.setText(String.valueOf(medias.mediaViagens()));
+            txtGanhosMedHora.setText(String.valueOf(medias.mediaHora()));
+            txtGanhosMedKm.setText(String.valueOf(medias.mediaKm()));
+
+        }
+        
 
     }
 

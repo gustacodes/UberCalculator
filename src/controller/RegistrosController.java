@@ -110,6 +110,7 @@ public class RegistrosController {
                         alert.trocaCabosPerto(); 
                     }
 
+                    HomeController.bol = true;
                     tela.telas("inicial", "NUBER");
                     fecharStage();
                     
