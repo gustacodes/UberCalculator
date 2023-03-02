@@ -1,21 +1,34 @@
 package controller;
 
 import java.io.IOException;
+import  java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
+import dao.DespesasDao;
 import dao.MetasDao;
+import dao.RegistrosDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.Alertas;
+import model.Registros;
+import model.Despesas;
+import view.Janelas;
 
 public class HomeController implements Initializable {
 
+    @FXML
+    private AnchorPane root;
+    
     @FXML
     private Text porcentagemInDriver;
 
@@ -70,6 +83,8 @@ public class HomeController implements Initializable {
     @FXML
     private Text txtViagens;
 
+    private Janelas tela = new Janelas();
+
     @FXML
     void cabos(ActionEvent event) {
 
@@ -78,64 +93,46 @@ public class HomeController implements Initializable {
     @FXML
     void clickInsta(ActionEvent event) {
 
+        Alertas erro = new Alertas();
+        
+        Desktop desktop = Desktop.getDesktop();
+
+        try {
+            desktop.browse(new URI("https://www.instagram.com/_gustalencar/"));
+        } catch (IOException | URISyntaxException e) {
+            erro.abrirLink();
+        }
     }
 
     @FXML
-    void consumoMedio(ActionEvent event) throws IOException {
-        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/consumomedio.fxml"));
-        Parent root = fxml.load();
-        Scene tela = new Scene(root);
-
-        Stage primaryStage = new Stage();
-
-        primaryStage.setTitle("Consumo médio");
-        primaryStage.setScene(tela);
-        primaryStage.show();
-        primaryStage.setResizable(false);
+    void consumoMedio(ActionEvent event) throws IOException {        
+        tela.telas("consumomedio", "Consumo médio");        
     }
 
     @FXML
     void consumoViagens(ActionEvent event) throws IOException {
-        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/consumoviagem.fxml"));
-        Parent root = fxml.load();
-        Scene tela = new Scene(root);
-
-        Stage primaryStage = new Stage();
-
-        primaryStage.setTitle("Consumo percruso");
-        primaryStage.setScene(tela);
-        primaryStage.show();
-        primaryStage.setResizable(false);
+        tela.telas("consumoviagem", "Consumo percurso");
     }
 
     @FXML
-    void contato(ActionEvent event) {
-
+    void contato(ActionEvent event) throws IOException {
+        tela.telas("contato", "Contato");
     }
 
     @FXML
-    void correia(ActionEvent event) {
-
+    void correia(ActionEvent event) throws IOException {
+        tela.telas("correia", "Correia");
     }
 
     @FXML
-    void excluir(ActionEvent event) {
-
+    void excluir(ActionEvent event) throws IOException {
+        tela.telas("excluir", "Excluir");
     }
 
     @FXML
-    void metas(ActionEvent event) throws IOException {
-        
-        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/metas.fxml"));
-        Parent root = fxml.load();
-        Scene tela = new Scene(root);
-
-        Stage primaryStage = new Stage();
-
-        primaryStage.setTitle("Registros do dia");
-        primaryStage.setScene(tela);
-        primaryStage.show();
-        primaryStage.setResizable(false);
+    void metas(ActionEvent event) throws IOException {        
+        tela.telas("metas", "Metas");
+        fecharStage();
     }
 
     @FXML
@@ -155,29 +152,46 @@ public class HomeController implements Initializable {
 
     @FXML
     void registrar(ActionEvent event) throws IOException {
-
-        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/resources/fxml/registrarGanhos.fxml"));
-        Parent root = fxml.load();
-        Scene tela = new Scene(root);
-
-        Stage primaryStage = new Stage();
-
-        primaryStage.setTitle("Registros do dia");
-        primaryStage.setScene(tela);
-        primaryStage.show();
-        primaryStage.setResizable(false);
-
+        tela.telas("registrarGanhos", "Registros do dia");
+        fecharStage();
     }
 
     @FXML
-    void sobre(ActionEvent event) {
+    void sobre(ActionEvent event) throws IOException {
+        tela.telas("sobre", "Sobre");
+    }
 
+    @FXML
+    void fecharStage() {
+        Stage stage = (Stage) root.getScene().getWindow();
+		stage.close();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         MetasDao daoMeta = new MetasDao();
-        txtMetaDiaria.setText(String.valueOf(daoMeta.lerMetas()));
+
+        txtMetaDiaria.setText(String.valueOf(daoMeta.lerMetas().getMetaDiaria()));
+
+        RegistrosDao daoRegistros = new RegistrosDao();
+
+        txtFaturamento.setText(String.valueOf(daoRegistros.lerRegistros().getTotal()));
+        txtSaldo.setText(String.valueOf(daoRegistros.lerRegistros().getLucro()));
+        txtViagens.setText(String.valueOf(daoRegistros.lerRegistros().getViagens()));
+        txtHoras.setText(String.valueOf(daoRegistros.lerRegistros().getHorasTrabalhadas()));
+        txtKmRodados.setText(String.valueOf(daoRegistros.lerRegistros().getKmDia()));
+
+        DespesasDao daoDespesas = new DespesasDao();
+
+        txtDepesas.setText(String.valueOf(daoDespesas.lerDespesas().getTotalDespesas()));
+
+        Registros medias = new Registros();
+
+        txtGanhosMedViagens.setText(String.valueOf(medias.mediaViagens()));
+        txtGanhosMedHora.setText(String.valueOf(medias.mediaHora()));
+        txtGanhosMedKm.setText(String.valueOf(medias.mediaKm()));
+
     }
 
 }

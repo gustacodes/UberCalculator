@@ -12,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="764.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#fecharStage" prefHeight="590.0" prefWidth="764.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
       <Pane layoutX="14.0" layoutY="41.0" prefHeight="66.0" prefWidth="211.0" style="-fx-background-color: #32CD32;">
          <children>
-            <Text fx:id="txtFaturamento" fill="#fafafa" layoutX="74.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtFaturamento" fill="#fafafa" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -26,7 +26,7 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="38.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="#fafafa" layoutX="56.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -38,17 +38,17 @@
       </Pane>
       <Pane layoutX="562.0" layoutY="126.0" prefHeight="193.0" prefWidth="176.0" style="-fx-background-color: #3CB371;">
          <children>
-            <Text fx:id="txtMetaDiaria" fill="#fafafa" layoutX="54.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtMetaDiaria" fill="#fafafa" layoutX="70.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="32.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="25.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="META DIÁRIA">
+            <Text fill="#fafafa" layoutX="25.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="META DIÁRIA">
                <font>
                   <Font name="Arial Rounded MT Bold" size="19.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="10.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="#fafafa" layoutX="26.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="32.0" />
                </font>
@@ -60,7 +60,7 @@
       </Pane>
       <Pane layoutX="266.0" layoutY="41.0" prefHeight="66.0" prefWidth="211.0" style="-fx-background-color: #FF0000;">
          <children>
-            <Text fx:id="txtDepesas" fill="#fafafa" layoutX="86.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtDepesas" fill="#fafafa" layoutX="91.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -70,7 +70,7 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="50.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="#fafafa" layoutX="55.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -125,7 +125,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="78.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
+            <Text fill="WHITE" layoutX="88.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -191,7 +191,7 @@
       </Pane>
       <Pane layoutX="527.0" layoutY="41.0" prefHeight="66.0" prefWidth="211.0" style="-fx-background-color: #1E90FF;">
          <children>
-            <Text fx:id="txtSaldo" fill="#fafafa" layoutX="89.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtSaldo" fill="#fafafa" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -201,7 +201,7 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="53.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="#fafafa" layoutX="56.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -298,7 +298,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="197.0" layoutY="534.0" mnemonicParsing="false" onAction="#registrar" prefHeight="46.0" prefWidth="176.0" style="-fx-background-color: #00FF00;" text="ADICIONAR" textFill="WHITE">
+      <Button layoutX="197.0" layoutY="534.0" mnemonicParsing="false" onAction="#registrar" prefHeight="46.0" prefWidth="176.0" style="-fx-background-color: #00FF00;" text="REGISTRAR" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>

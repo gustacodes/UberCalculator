@@ -2,17 +2,24 @@ package controller;
 
 import java.io.IOException;
 
+import dao.DespesasDao;
 import dao.ManutencaoDao;
 import dao.RegistrosDao;
 import dao.StatusDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import model.Alertas;
-import model.Calculo;
+import model.Registros;
 import model.Despesas;
+import view.Janelas;
 
 public class RegistrosController {
+
+    @FXML
+    private AnchorPane root;
 
     @FXML
     private TextField despeCombus;
@@ -48,11 +55,12 @@ public class RegistrosController {
     private TextField viagensDia;
 
     Alertas alert = new Alertas();   
+    private Janelas tela = new Janelas();
 
     @FXML
     void registrarDados(ActionEvent event) throws IOException {
         
-            Calculo calculoDeGanhos = new Calculo();
+            Registros calculoDeGanhos = new Registros();
 
             if(uberGanhos.getText().isEmpty() || noveGanhos.getText().isEmpty() || inGanhos.getText().isEmpty() || outrosGanhos.getText().isEmpty()){                
                 alert.alertaCampoVazio();
@@ -69,6 +77,10 @@ public class RegistrosController {
                 despesas.DespesasTotais(Double.parseDouble(despeCombus.getText()), Double.parseDouble(despeRefeicoes.getText()), Double.parseDouble(despeLavagem.getText()), Double.parseDouble(despeManut.getText()));
                 
                 calculoDeGanhos.lucroTotal(calculoDeGanhos.getTotal(), despesas);
+
+                DespesasDao daoDespesas = new DespesasDao();
+
+                daoDespesas.salvarDespesas(despesas);
 
                 RegistrosDao daoRegistros = new RegistrosDao();
 
@@ -98,7 +110,16 @@ public class RegistrosController {
                         alert.trocaCabosPerto(); 
                     }
 
+                    tela.telas("inicial", "NUBER");
+                    fecharStage();
+                    
             }
+    }
+
+    @FXML
+    void fecharStage() {
+        Stage stage = (Stage) root.getScene().getWindow();
+		stage.close();
     }
 
 }

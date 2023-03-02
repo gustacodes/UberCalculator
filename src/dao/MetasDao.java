@@ -9,8 +9,6 @@ import model.Metas;
 
 public class MetasDao {
 
-    private double metaDiaria;
-
     private Connection conexao = Conexao.getConnection();
     
     public void salvaMetas(Metas metas){
@@ -32,8 +30,9 @@ public class MetasDao {
         }
     }
 
-    public double lerMetas() {
+    public Metas lerMetas() {
         
+        Metas metas = new Metas();
         String sql = "SELECT * FROM METAS";
 
         PreparedStatement stm;
@@ -42,15 +41,15 @@ public class MetasDao {
             ResultSet rs = stm.executeQuery();
 
                 while(rs.next()){
-                    metaDiaria = rs.getDouble("metaDiaria");
+                    metas.setMetaDiaria(rs.getDouble("metaDiaria"));
+                    metas.setMetaMensal(rs.getDouble("metaMensal"));
                 }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }   
         
-        return metaDiaria;
-        
+        return metas;        
     }
 
 }

@@ -17,31 +17,31 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.Calculo;
+import model.Registros;
 import model.Alertas;
 
 public class PainelController implements Initializable {
 
     @FXML
-    private TableView<Calculo> tableView;
+    private TableView<Registros> tableView;
 
     @FXML
-    private TableColumn<Calculo, String> dataColumn;
+    private TableColumn<Registros, String> dataColumn;
 
     @FXML
-    private TableColumn<Calculo, Double> despesaColumn;
+    private TableColumn<Registros, Double> despesaColumn;
 
     @FXML
-    private TableColumn<Calculo, Double> lucroColumn;
+    private TableColumn<Registros, Double> lucroColumn;
 
     @FXML
-    private TableColumn<Calculo, Double> noveColumn;
+    private TableColumn<Registros, Double> noveColumn;
 
     @FXML
-    private TableColumn<Calculo, Double> totalColumn;
+    private TableColumn<Registros, Double> totalColumn;
 
     @FXML
-    private TableColumn<Calculo, Double> uberColumn;
+    private TableColumn<Registros, Double> uberColumn;
 
     @FXML
     private TextField kmDia;

@@ -1,10 +1,11 @@
 package controller;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import model.Alertas;
 import model.Consumos;
@@ -21,7 +22,7 @@ public class ConsumoMedioController {
     private Text totalConsumo;
 
     @FXML
-    void consumoMedio(ActionEvent event) {
+    void consumoMedio(ActionEvent event) throws IOException {
         
         Consumos medio = new Consumos();
 
@@ -36,6 +37,7 @@ public class ConsumoMedioController {
 
             DecimalFormat df = new DecimalFormat("##.#");                        
             totalConsumo.setText("Seu consumo médio atual é de " + df.format(medio.getMedia()) + "KM/L");
+            
         }
     }
 

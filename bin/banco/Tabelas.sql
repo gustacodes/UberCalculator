@@ -14,6 +14,17 @@ CREATE TABLE REGISTROS (
 SELECT * FROM REGISTROS;
 DROP TABLE REGISTROS;
 
+CREATE TABLE DESPESAS (
+	combustivel double,
+    refeicoes double,
+    lavagem double,
+    manutencao double,
+    total double
+);
+
+SELECT * FROM DESPESAS;
+DROP TABLE DESPESAS;
+
 CREATE TABLE MANUTENCAO (
 	kmDoDia double,
 	kmProxTrocaOleo double,

@@ -4,7 +4,9 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Calculo {
+import dao.RegistrosDao;
+
+public class Registros {
 
     Alertas error = new Alertas();
 
@@ -22,11 +24,11 @@ public class Calculo {
     private double horasTrabalhadas = 0.0;
     private int viagens;
 
-    public Calculo() {
+    public Registros() {
 
     }
 
-    public Calculo(String date, double uber, double nove, double inDriver, double total, double lucro, double kmDia, double horasTrabalhadas, int viagens) {
+    public Registros(String date, double uber, double nove, double inDriver, double total, double lucro, double kmDia, double horasTrabalhadas, int viagens) {
         this.date = date;
         this.uber = uber;
         this.nove = nove;
@@ -157,4 +159,20 @@ public class Calculo {
 
     }
 
+    private RegistrosDao daoRegistros = new RegistrosDao();
+
+    public double mediaViagens(){
+        viagens = (int) (daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getViagens());
+        return viagens;
+    }
+    
+    public double mediaHora(){
+        horasTrabalhadas = daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getHorasTrabalhadas();
+        return horasTrabalhadas;
+    }
+
+    public double mediaKm(){
+        kmDia = daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getKmDia();
+        return kmDia;
+    }
 }
