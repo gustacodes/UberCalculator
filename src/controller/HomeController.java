@@ -80,12 +80,7 @@ public class HomeController implements Initializable {
     private Text txtViagens;
 
     private Janelas tela = new Janelas();
-    Alertas erro = new Alertas();
-
-    @FXML
-    void cabos(ActionEvent event) {
-
-    }
+    Alertas alerta = new Alertas();
 
     @FXML
     void clickInsta(ActionEvent event) {        
@@ -95,7 +90,7 @@ public class HomeController implements Initializable {
         try {
             desktop.browse(new URI("https://www.instagram.com/_gustalencar/"));
         } catch (IOException | URISyntaxException e) {
-            erro.abrirLink();
+            alerta.abrirLink();
         }
     }
 
@@ -131,14 +126,10 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    void oleo(ActionEvent event) {
-
+    void manutencao(ActionEvent event) throws IOException {
+        tela.telas("manutencao", "Manutenção");
     }
-
-    @FXML
-    void outros(ActionEvent event) {
-
-    }
+    
 
     @FXML
     void periodo(ActionEvent event) {
@@ -162,7 +153,7 @@ public class HomeController implements Initializable {
 		stage.close();
     }
 
-    static boolean bol = false;
+    static boolean controlador = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {    
@@ -171,12 +162,12 @@ public class HomeController implements Initializable {
 
         txtMetaDiaria.setText(String.valueOf(daoMeta.lerMetas().getMetaDiaria()));
 
-        if(bol == true) {
+        if(controlador == true) {
 
             RegistrosDao daoRegistros = new RegistrosDao();
 
                 if(daoRegistros.lerRegistros().getTotal() >= daoMeta.lerMetas().getMetaDiaria()){
-                    erro.metaDiariaBatida();
+                    alerta.metaDiariaBatida();
                 }
 
             txtFaturamento.setText(String.valueOf(daoRegistros.lerRegistros().getTotal()));

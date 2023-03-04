@@ -4,15 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import banco.Conexao;
 
 public class StatusDao {
 
     private double kmDoDiaDao = 0;
     private double proxTroca = 0;
-    private double media = 0;
+    private double mediaOleo = 0;
+    private double mediaCabos = 0;
+    private double mediaCorreia = 0;
     private double aux = 0;
+    private double aux2 = 0;
 
     private Connection conexao = Conexao.getConnection();
 
@@ -28,24 +30,30 @@ public class StatusDao {
                 while(result.next()) { 
 
                     proxTroca = result.getDouble("kmProxTrocaOleo");    
-                    kmDoDiaDao += result.getDouble("kmDoDia"); 
+                    kmDoDiaDao = result.getDouble("kmDoDia"); 
                     
-                        if(proxTroca > 0){
-                            aux = proxTroca;
-                        }  
-                                                                             
-                }
-                
-                    if(aux > 0){
-                        media = (kmDoDiaDao / aux) / 100;
-                        kmDoDiaDao = 0;
+                    if(proxTroca > 0){
+                        aux = proxTroca;
                     }
+
+                        if(kmDoDiaDao > 0) {
+                            aux2 += kmDoDiaDao;
+                        }
+                        
+                            if(aux > 0){
+                                mediaOleo = (aux2 / aux);                                
+                            }
+            }
+
+            aux = 0;
+            aux2 = 0;
+            kmDoDiaDao = 0;
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return media;
+        
+        return mediaOleo;
     }
 
     public double verificaTrocaCorreia(){
@@ -60,27 +68,34 @@ public class StatusDao {
                 while(result.next()) { 
 
                     proxTroca = result.getDouble("kmProxTrocaCorreia");    
-                    kmDoDiaDao += result.getDouble("kmDoDia"); 
+                    kmDoDiaDao = result.getDouble("kmDoDia"); 
                     
                         if(proxTroca > 0){
                             aux = proxTroca;
-                        }  
-                                                                             
+                        }
+
+                        if(kmDoDiaDao > 0) {
+                            aux2 += kmDoDiaDao;
+                        }
+                        
+                            if(aux > 0){
+                                mediaCorreia = (aux2 / aux);                                
+                            }
                 }
+
+                aux = 0;
+                aux2 = 0;
+                kmDoDiaDao = 0;
                 
-                    if(aux > 0){
-                        media = (kmDoDiaDao / aux) / 100;
-                        kmDoDiaDao = 0;
-                    }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return media;
+        return mediaCorreia;
     }
 
-    public double verificaTrocaCabos(){
+    public double verificaTrocaCabos() {
 
         String sql = "SELECT kmProxTrocaCabos, kmDoDia FROM MANUTENCAO";
 
@@ -92,24 +107,31 @@ public class StatusDao {
                 while(result.next()) { 
 
                     proxTroca = result.getDouble("kmProxTrocaCabos");    
-                    kmDoDiaDao += result.getDouble("kmDoDia"); 
+                    kmDoDiaDao = result.getDouble("kmDoDia"); 
                     
-                        if(proxTroca > 0){
-                            aux = proxTroca;
-                        }  
-                                                                             
-                }
-                
-                    if(aux > 0){
-                        media = (kmDoDiaDao / aux) / 100;
-                        kmDoDiaDao = 0;
+                    if(proxTroca > 0){
+                        aux = proxTroca;
                     }
+
+                    if(kmDoDiaDao > 0) {
+                        aux2 += kmDoDiaDao;
+                    }
+                    
+                        if(aux > 0){
+                            mediaCabos = (aux2 / aux);
+                            
+                        }
+            }
+
+            aux = 0;
+            aux2 = 0;
+            kmDoDiaDao = 0;
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return media;
+        return mediaCabos;
     }
 
 }

@@ -8,47 +8,56 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManutencaoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="587.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManutencaoController">
    <children>
-      <Separator layoutX="-12.0" layoutY="137.0" prefHeight="3.0" prefWidth="605.0" />
-      <Separator layoutX="-7.0" layoutY="262.0" prefHeight="3.0" prefWidth="598.0" />
-      <Button layoutX="95.0" layoutY="64.0" mnemonicParsing="false" onAction="#trocaOleo" prefHeight="26.0" prefWidth="68.0" text="Registrar" />
+      <Separator layoutX="-12.0" layoutY="137.0" opacity="0.11" prefHeight="3.0" prefWidth="605.0" />
+      <Separator layoutX="-7.0" layoutY="262.0" opacity="0.11" prefHeight="3.0" prefWidth="598.0" />
+      <Button layoutX="95.0" layoutY="64.0" mnemonicParsing="false" onAction="#trocaOleo" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #00FF00;" text="Registrar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <TextField fx:id="proxTroca" alignment="CENTER" layoutX="16.0" layoutY="64.0" prefHeight="26.0" prefWidth="70.0" promptText="10.000" />
-      <Text layoutX="18.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
-      <Text layoutX="209.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
+      <Text fill="#948d8d" layoutX="18.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
+      <Text fill="WHITE" layoutX="209.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
       <ProgressBar fx:id="statusOleo" layoutX="129.0" layoutY="109.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
-      <Text layoutX="17.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Óleo">
+      <Text fill="WHITE" layoutX="17.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Óleo">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="20.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correia">
+      <Text fill="WHITE" layoutX="20.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correia">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="100.0" layoutY="189.0" mnemonicParsing="false" onAction="#trocaCorreia" prefHeight="26.0" prefWidth="68.0" text="Registrar" />
+      <Button layoutX="100.0" layoutY="189.0" mnemonicParsing="false" onAction="#trocaCorreia" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #00FF00;" text="Registrar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <TextField fx:id="proxTrocaCorreia" alignment="CENTER" layoutX="21.0" layoutY="189.0" prefHeight="26.0" prefWidth="70.0" promptText="100.000" />
-      <Text layoutX="22.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
-      <Text layoutX="209.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
+      <Text fill="#948d8d" layoutX="22.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
+      <Text fill="WHITE" layoutX="209.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
       <ProgressBar fx:id="statusCorreia" layoutX="129.0" layoutY="233.0" prefHeight="18.0" prefWidth="348.0" progress="0.0" />
-      <Text layoutX="21.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cabos/velas">
+      <Text fill="WHITE" layoutX="21.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cabos/velas">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="102.0" layoutY="319.0" mnemonicParsing="false" onAction="#trocaCabos" prefHeight="26.0" prefWidth="68.0" text="Registrar" />
+      <Button layoutX="102.0" layoutY="319.0" mnemonicParsing="false" onAction="#trocaCabos" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #00FF00;" text="Registrar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <TextField fx:id="proxTrocaCabos" alignment="CENTER" layoutX="23.0" layoutY="319.0" prefHeight="26.0" prefWidth="70.0" promptText="50.000" />
-      <Text layoutX="22.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
-      <Text layoutX="211.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
+      <Text fill="#948d8d" layoutX="22.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km para próxima troca:" />
+      <Text fill="WHITE" layoutX="211.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status para próxima troca">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

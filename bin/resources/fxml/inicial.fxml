@@ -270,20 +270,17 @@
       </Pane>
       <MenuBar layoutY="-1.0" prefHeight="26.0" prefWidth="764.0">
         <menus>
+            <Menu mnemonicParsing="false" text="Veículo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#manutencao" text="Manutenção" />
+               </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Financeiro">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#periodo" text="Período" />
                   <MenuItem mnemonicParsing="false" onAction="#metas" text="Metas" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Manutenção">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#cabos" text="Cabos/velas" />
-                  <MenuItem mnemonicParsing="false" onAction="#correia" text="Correia" />
-                  <MenuItem mnemonicParsing="false" onAction="#oleo" text="Óleo" />
-                  <MenuItem mnemonicParsing="false" onAction="#outros" text="Outros..." />
-               </items>
-            </Menu>
             <Menu mnemonicParsing="false" text="Consumos">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#consumoViagens" text="Consumo Viagens" />
