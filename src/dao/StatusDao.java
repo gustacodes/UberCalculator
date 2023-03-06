@@ -118,8 +118,7 @@ public class StatusDao {
                     }
                     
                         if(aux > 0){
-                            mediaCabos = (aux2 / aux);
-                            
+                            mediaCabos = (aux2 / aux);                            
                         }
             }
 

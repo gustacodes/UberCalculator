@@ -3,7 +3,6 @@ package model;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import dao.RegistrosDao;
 
 public class Registros {
@@ -22,7 +21,7 @@ public class Registros {
     private double lucro = 0.0;
     private double kmDia = 0.0;
     private double horasTrabalhadas = 0.0;
-    private int viagens;
+    protected int viagens;
 
     public Registros() {
 

@@ -132,8 +132,8 @@ public class HomeController implements Initializable {
     
 
     @FXML
-    void periodo(ActionEvent event) {
-
+    void periodo(ActionEvent event) throws IOException {
+        tela.telas("ganhosperiodo", "Registros por período");
     }
 
     @FXML
@@ -186,8 +186,7 @@ public class HomeController implements Initializable {
             txtGanhosMedHora.setText(String.valueOf(medias.mediaHora()));
             txtGanhosMedKm.setText(String.valueOf(medias.mediaKm()));
 
-        }
-        
+        }        
 
     }
 

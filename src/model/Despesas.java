@@ -1,7 +1,8 @@
 package model;
 
-public class Despesas {
+public class Despesas extends Registros {
     
+    public static final String Double = null;
     private double combustivel;
     private double refeicoes;
     private double lavagem;
@@ -12,7 +13,8 @@ public class Despesas {
 
     }
 
-    public Despesas(double combustivel, double refeicoes, double lavagem, double manutencao) {
+    public Despesas(String data, double combustivel, double refeicoes, double lavagem, double manutencao) {
+        super();
         this.combustivel = combustivel;
         this.refeicoes = refeicoes;
         this.lavagem = lavagem;

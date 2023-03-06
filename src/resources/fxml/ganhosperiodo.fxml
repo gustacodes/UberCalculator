@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="600.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GanhosPeriodos">
+   <children>
+      <Text fill="#fcfcfc" layoutX="28.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="17.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dataInicio" layoutX="80.0" layoutY="94.0" promptText="Início" />
+      <DatePicker fx:id="dataFinal" layoutX="392.0" layoutY="93.0" promptText="Final" />
+      <Text fill="#fcfcfc" layoutX="332.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Até">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="17.0" />
+         </font>
+      </Text>
+      <Pane layoutX="28.0" layoutY="133.0" prefHeight="66.0" prefWidth="176.0" style="-fx-background-color: #32CD32;">
+         <children>
+            <Text fx:id="txtFaturamento" fill="#fafafa" layoutX="72.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="34.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faturamento">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="36.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="221.0" layoutY="133.0" prefHeight="66.0" prefWidth="164.0" style="-fx-background-color: #FF0000;">
+         <children>
+            <Text fx:id="txtDepesas" fill="#fafafa" layoutX="75.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="50.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="39.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="28.0" layoutY="219.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="32.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total de viagens">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtViagens" fill="WHITE" layoutX="76.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="211.0" layoutY="219.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="26.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horas trabalhadas">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtHoras" fill="WHITE" layoutX="59.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="103.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="393.0" layoutY="219.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="26.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Km rodados">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtKmRodados" fill="WHITE" layoutX="38.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="28.0" layoutY="320.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="15.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos méd. viagens">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtGanhosMedViagens" fill="WHITE" layoutX="70.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="40.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="211.0" layoutY="320.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="22.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos méd. hora">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtGanhosMedHora" fill="WHITE" layoutX="72.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="41.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="394.0" layoutY="320.0" prefHeight="91.0" prefWidth="176.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="#d9d5d5" layoutX="26.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos méd. Km">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtGanhosMedKm" fill="WHITE" layoutX="72.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="44.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="402.0" layoutY="133.0" prefHeight="66.0" prefWidth="164.0" style="-fx-background-color: #1E90FF;">
+         <children>
+            <Text fx:id="txtSaldo" fill="#fafafa" layoutX="73.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="67.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="#fafafa" layoutX="37.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutY="-3.0" prefHeight="28.0" prefWidth="600.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text fill="WHITE" layoutX="169.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GANHOS POR PERÍODOS">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Button layoutX="225.0" layoutY="417.0" mnemonicParsing="false" onAction="#ganhosPeriodos" prefHeight="46.0" prefWidth="148.0" style="-fx-background-color: #4682B4;" text="GERAR" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -13,16 +13,17 @@ public class DespesasDao {
 
     public void salvarDespesas(Despesas despesa){
         
-        String sql = "INSERT INTO DESPESAS VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO DESPESAS VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stm = conexao.prepareStatement(sql);
-
-            stm.setDouble(1, despesa.getCombustivel());
-            stm.setDouble(2, despesa.getRefeicoes());
-            stm.setDouble(3, despesa.getLavagem());
-            stm.setDouble(4, despesa.getManutencao());
-            stm.setDouble(5, despesa.getTotalDespesas());
+            
+            stm.setString(1, despesa.getDate());
+            stm.setDouble(2, despesa.getCombustivel());
+            stm.setDouble(3, despesa.getRefeicoes());
+            stm.setDouble(4, despesa.getLavagem());
+            stm.setDouble(5, despesa.getManutencao());
+            stm.setDouble(6, despesa.getTotalDespesas());
 
             stm.execute();
             stm.close();

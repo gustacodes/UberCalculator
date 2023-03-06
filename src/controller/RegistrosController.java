@@ -72,7 +72,7 @@ public class RegistrosController {
                 calculoDeGanhos.setHorasTrabalhadas(Double.parseDouble(hrsTrabalhadas.getText()));
                 calculoDeGanhos.setViagens(Integer.parseInt(viagensDia.getText()));
                 
-                Despesas despesas = new Despesas();
+                Despesas despesas = new Despesas(calculoDeGanhos.getDate(), Double.parseDouble(despeCombus.getText()), Double.parseDouble(despeRefeicoes.getText()), Double.parseDouble(despeLavagem.getText()), Double.parseDouble(despeManut.getText()));
 
                 despesas.DespesasTotais(Double.parseDouble(despeCombus.getText()), Double.parseDouble(despeRefeicoes.getText()), Double.parseDouble(despeLavagem.getText()), Double.parseDouble(despeManut.getText()));
                 

@@ -11,15 +11,17 @@ CREATE TABLE REGISTROS (
     viagens int
 );
 
+SELECT * FROM REGISTROS WHERE data BETWEEN '05/03/2023' AND '05/03/2023';
 SELECT * FROM REGISTROS;
 DROP TABLE REGISTROS;
 
 CREATE TABLE DESPESAS (
+	data varchar(10),
 	combustivel double,
     refeicoes double,
     lavagem double,
     manutencao double,
-    total double
+    total double    
 );
 
 SELECT * FROM DESPESAS;
