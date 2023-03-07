@@ -125,7 +125,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
+            <Text fill="WHITE" layoutX="112.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>

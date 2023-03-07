@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.text.Text;
+import model.Arredonda;
 
 public class GanhosPeriodos {
 
@@ -52,14 +53,17 @@ public class GanhosPeriodos {
         LocalDate dataFim = dataFinal.getValue();
         String formataData2 = dataFim.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-        PeriodoDao daoPeriodo = new PeriodoDao();
+        PeriodoDao daoPeriodo = new PeriodoDao();        
+        Arredonda arredonda = new Arredonda();
+
         
-        txtFaturamento.setText(String.valueOf(daoPeriodo.ganhosPeriod(formataData, formataData2).getTotal()));
-        txtSaldo.setText(String.valueOf(daoPeriodo.ganhosPeriod(formataData, formataData2).getLucro()));
+        
+        txtFaturamento.setText(arredonda.arredondarValor(daoPeriodo.ganhosPeriod(formataData, formataData2).getTotal()).toString());
+        txtSaldo.setText(arredonda.arredondarValor(daoPeriodo.ganhosPeriod(formataData, formataData2).getLucro()).toString());
         txtHoras.setText(String.valueOf(daoPeriodo.ganhosPeriod(formataData, formataData2).getHorasTrabalhadas()));
-        txtKmRodados.setText(String.valueOf(daoPeriodo.ganhosPeriod(formataData, formataData2).getKmDia()));
+        txtKmRodados.setText(arredonda.arredondarValor(daoPeriodo.ganhosPeriod(formataData, formataData2).getKmDia()).toString());
         txtViagens.setText(String.valueOf(daoPeriodo.ganhosPeriod(formataData, formataData2).getViagens()));
-        txtDepesas.setText(String.valueOf(daoPeriodo.despesa(formataData, formataData2).getTotalDespesas()));
+        txtDepesas.setText(arredonda.arredondarValor(daoPeriodo.despesa(formataData, formataData2).getTotalDespesas()).toString());
         
     }
 

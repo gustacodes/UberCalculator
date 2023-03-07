@@ -61,7 +61,9 @@ public class Despesas extends Registros {
         this.totalDespesas = totalDespesas;
     }
 
-    public double DespesasTotais(double combustivelDesp, double refeicoesDesp, double lavagemDesp, double manutencaoDesp) {
+    Arredonda arredonda = new Arredonda();
+
+    public String DespesasTotais(double combustivelDesp, double refeicoesDesp, double lavagemDesp, double manutencaoDesp) {
 
         Alertas alert = new Alertas();
 
@@ -69,12 +71,12 @@ public class Despesas extends Registros {
 
             totalDespesas = combustivelDesp + refeicoesDesp + lavagemDesp + manutencaoDesp;
 
-             return totalDespesas;
+             return arredonda.arredondarValor(totalDespesas);
 
         } else {
 
             alert.alertaNegativo();
-            return totalDespesas;
+            return "0.00";
         }
         
     }

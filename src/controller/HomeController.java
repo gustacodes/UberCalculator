@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Alertas;
+import model.Arredonda;
 import model.Registros;
 import view.Janelas;
 
@@ -170,11 +171,13 @@ public class HomeController implements Initializable {
                     alerta.metaDiariaBatida();
                 }
 
-            txtFaturamento.setText(String.valueOf(daoRegistros.lerRegistros().getTotal()));
-            txtSaldo.setText(String.valueOf(daoRegistros.lerRegistros().getLucro()));
+            Arredonda arredonda = new Arredonda();            
+
+            txtFaturamento.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getTotal()));
+            txtSaldo.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getLucro()));
             txtViagens.setText(String.valueOf(daoRegistros.lerRegistros().getViagens()));
             txtHoras.setText(String.valueOf(daoRegistros.lerRegistros().getHorasTrabalhadas()));
-            txtKmRodados.setText(String.valueOf(daoRegistros.lerRegistros().getKmDia()));
+            txtKmRodados.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getKmDia()));
 
             DespesasDao daoDespesas = new DespesasDao();
 

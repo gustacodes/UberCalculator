@@ -120,58 +120,63 @@ public class Registros {
         this.viagens = viagens;
     }
 
-    DecimalFormat df = new DecimalFormat("###.00");
+    //DecimalFormat df = new DecimalFormat("###.##");
 
-    public double calculoTotal(double uberValor, double noveValor, double inDriverValor, double outrosValor) {
+    Arredonda valorArredonda = new Arredonda();
+
+    public String calculoTotal(double uberValor, double noveValor, double inDriverValor, double outrosValor) {
 
         if(uberValor >= 0 && noveValor >= 0 && inDriverValor >= 0 && outrosValor >= 0){
             this.uber = uberValor;
             this.nove = noveValor;
             this.inDriver = inDriverValor;
             this.outros = outrosValor;
+            
+            total = uberValor + noveValor + inDriverValor + outrosValor;
 
-            df.format(total = uberValor + noveValor + inDriverValor + outrosValor);
-
-            return total;
+            return valorArredonda.arredondarValor(total);
 
         } else {
             error.alertaNegativo();
             date = null;
-            return total;
+            return "0.00";
         }    
 
     }
 
-    public double lucroTotal(double totalDoDia, Despesas despesa) {
+    public String lucroTotal(double totalDoDia, Despesas despesa) {
 
         if(totalDoDia >= 0 && despesa.getTotalDespesas() >= 0) {
 
-            df.format(lucro = totalDoDia - despesa.getTotalDespesas());
+            lucro = totalDoDia - despesa.getTotalDespesas();
             
-            return lucro;
+            return valorArredonda.arredondarValor(lucro);
 
         } else {
             error.alertaNegativo();
             date = null;
-            return 0.0;
+            return "0.00";
         }
 
     }
 
     private RegistrosDao daoRegistros = new RegistrosDao();
+    
 
-    public double mediaViagens(){
+    public String mediaViagens(){
         viagens = (int) (daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getViagens());
-        return viagens;
+
+        return valorArredonda.arredondarValor(viagens);
     }
     
-    public double mediaHora(){
-        horasTrabalhadas = daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getHorasTrabalhadas();
-        return horasTrabalhadas;
+    public String mediaHora(){
+        horasTrabalhadas = daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getHorasTrabalhadas();  
+
+        return valorArredonda.arredondarValor(horasTrabalhadas);
     }
 
-    public double mediaKm(){
+    public String mediaKm(){
         kmDia = daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getKmDia();
-        return kmDia;
+        return valorArredonda.arredondarValor(kmDia);
     }
 }

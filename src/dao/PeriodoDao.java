@@ -5,12 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import banco.Conexao;
+import model.Arredonda;
 import model.Despesas;
 import model.Registros;
 
 public class PeriodoDao {
     
     private Connection conexao = Conexao.getConnection();
+    Arredonda ar = new Arredonda();
     
     public Registros ganhosPeriod(String data1, String data2) {
 
@@ -28,12 +30,11 @@ public class PeriodoDao {
 
                     periodo.setTotal(periodo.getTotal() + rs.getDouble("total"));
                     periodo.setLucro(periodo.getLucro() + rs.getDouble("lucro"));
-                    periodo.setViagens( periodo.getViagens() +  rs.getInt("viagens"));
+                    periodo.setViagens(periodo.getViagens() +  rs.getInt("viagens"));
                     periodo.setHorasTrabalhadas(periodo.getHorasTrabalhadas() + rs.getDouble("horasTrabalhadas"));
                     periodo.setKmDia(periodo.getKmDia() + rs.getDouble("kmDia"));                
                                         
                 }
-
 
         } catch (SQLException e) {
             e.printStackTrace();

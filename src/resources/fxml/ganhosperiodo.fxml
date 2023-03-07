@@ -24,7 +24,7 @@
       </Text>
       <Pane layoutX="28.0" layoutY="133.0" prefHeight="66.0" prefWidth="176.0" style="-fx-background-color: #32CD32;">
          <children>
-            <Text fx:id="txtFaturamento" fill="#fafafa" layoutX="72.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtFaturamento" fill="#fafafa" layoutX="62.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="36.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="#fafafa" layoutX="26.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -46,7 +46,7 @@
       </Pane>
       <Pane layoutX="221.0" layoutY="133.0" prefHeight="66.0" prefWidth="164.0" style="-fx-background-color: #FF0000;">
          <children>
-            <Text fx:id="txtDepesas" fill="#fafafa" layoutX="75.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtDepesas" fill="#fafafa" layoutX="63.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -56,7 +56,7 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="39.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="#fafafa" layoutX="27.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -73,7 +73,7 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtViagens" fill="WHITE" layoutX="76.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+            <Text fx:id="txtViagens" fill="WHITE" layoutX="71.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -87,12 +87,12 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtHoras" fill="WHITE" layoutX="59.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00">
+            <Text fx:id="txtHoras" fill="WHITE" layoutX="49.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="103.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h">
+            <Text fill="WHITE" layoutX="119.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -106,12 +106,12 @@
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtKmRodados" fill="WHITE" layoutX="38.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtKmRodados" fill="WHITE" layoutX="26.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
+            <Text fill="WHITE" layoutX="108.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Km">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -130,7 +130,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="40.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="WHITE" layoutX="33.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -149,7 +149,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="41.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="WHITE" layoutX="35.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -168,7 +168,7 @@
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="44.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="WHITE" layoutX="36.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
@@ -177,7 +177,7 @@
       </Pane>
       <Pane layoutX="402.0" layoutY="133.0" prefHeight="66.0" prefWidth="164.0" style="-fx-background-color: #1E90FF;">
          <children>
-            <Text fx:id="txtSaldo" fill="#fafafa" layoutX="73.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+            <Text fx:id="txtSaldo" fill="#fafafa" layoutX="59.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -187,7 +187,7 @@
                   <Font name="Arial Rounded MT Bold" size="17.0" />
                </font>
             </Text>
-            <Text fill="#fafafa" layoutX="37.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
+            <Text fill="#fafafa" layoutX="23.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
