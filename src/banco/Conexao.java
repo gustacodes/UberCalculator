@@ -10,7 +10,7 @@ public class Conexao {
     private static String url = "jdbc:mysql://127.0.0.1:3306/ubercalculator";
     private static String driver = "com.mysql.cj.jdbc.Driver";
     private static String usuario = "root";
-    private static String senha = "wel3nsuh";
+    private static String senha = "*****";
 
     public static Connection getConnection() {
 
