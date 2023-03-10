@@ -241,7 +241,7 @@
          <children>
             <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="11.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../view/imgs/volante.png" />
+                  <Image url="@../imgs/volante.png" />
                </image>
             </ImageView>
             <Text fx:id="txtOutros" fill="WHITE" layoutX="87.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
@@ -270,7 +270,7 @@
             </Text>
             <ImageView fitHeight="28.0" fitWidth="81.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../view/imgs/uber.png" />
+                  <Image url="@../imgs/uber.png" />
                </image>
             </ImageView>
          </children>
@@ -289,7 +289,7 @@
             </Text>
             <ImageView fitHeight="28.0" fitWidth="209.0" layoutX="11.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../view/imgs/99.jpg" />
+                  <Image url="@../imgs/99.jpg" />
                </image>
             </ImageView>
          </children>
@@ -298,7 +298,7 @@
          <children>
             <ImageView fitHeight="28.0" fitWidth="81.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../view/imgs/indriver.png" />
+                  <Image url="@../imgs/indriver.png" />
                </image>
             </ImageView>
             <Text fx:id="txtInDriver" fill="WHITE" layoutX="76.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
@@ -327,7 +327,7 @@
             </Text>
             <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="11.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../view/imgs/cedula.jpg" />
+                  <Image url="@../imgs/cedula.jpg" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="39.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="META DIÁRIA">
