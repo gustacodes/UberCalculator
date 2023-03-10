@@ -2,16 +2,14 @@ package model;
 
 public class Metas {
     
-    private double metaDiaria;
-    private double metaMensal;
+    private double metaDiaria = 0;
 
     public Metas() {
 
     }
 
-    public Metas(double metaDiaria, double metaMensal) {
+    public Metas(double metaDiaria) {
         this.metaDiaria = metaDiaria;
-        this.metaMensal = metaMensal;
     }
 
     Alertas alertas = new Alertas();
@@ -24,31 +22,13 @@ public class Metas {
         this.metaDiaria = metaDiaria;           
     }
 
-    public double getMetaMensal() {
-        return metaMensal;
-    }
-
-    public void setMetaMensal(double metaMensal) {
-        this.metaMensal = metaMensal;
-    }
+    
 
     public double registraMetaDiaria(double diaMeta) {
 
         if(diaMeta > 0){
             metaDiaria = diaMeta;
             return metaDiaria;
-        } else {
-            alertas.alertaNegativo();
-            return 0;
-        }
-
-    }
-
-    public double registraMetaMensal(double mesMeta) {
-
-        if(mesMeta > 0){
-            metaMensal = mesMeta;
-            return metaMensal;
         } else {
             alertas.alertaNegativo();
             return 0;

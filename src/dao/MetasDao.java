@@ -13,14 +13,13 @@ public class MetasDao {
     
     public void salvaMetas(Metas metas){
         
-        String sql = "INSERT INTO METAS VALUES (?, ?)";
+        String sql = "UPDATE METAS SET metaDiaria = (?)";
 
         try {
 
             PreparedStatement statement = conexao.prepareStatement(sql);
 
-            statement.setDouble(1, metas.getMetaDiaria());
-            statement.setDouble(2, metas.getMetaMensal());
+            statement.setDouble(1, metas.getMetaDiaria());          
 
             statement.execute();
             statement.close();
@@ -42,7 +41,6 @@ public class MetasDao {
 
                 while(rs.next()){
                     metas.setMetaDiaria(rs.getDouble("metaDiaria"));
-                    metas.setMetaMensal(rs.getDouble("metaMensal"));
                 }
 
         } catch (SQLException e) {

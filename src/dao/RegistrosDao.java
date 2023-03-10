@@ -40,7 +40,7 @@ public class RegistrosDao {
             }
         }
 
-        public Registros lerRegistros() {
+    public Registros lerRegistros() {
         
         Registros registros = new Registros();
 
@@ -54,10 +54,11 @@ public class RegistrosDao {
 
                     while(rs.next()){
                         registros.setViagens(rs.getInt("viagens"));
-                        registros.setHorasTrabalhadas(rs.getDouble("horasTrabalhadas"));
                         registros.setKmDia(rs.getDouble("kmDia"));
                         registros.setTotal(rs.getDouble("total"));
                         registros.setLucro(rs.getDouble("lucro"));
+                        registros.setOutros(registros.getOutros() + rs.getDouble("outros"));
+                        
                     }
 
             } catch (SQLException e) {
@@ -66,5 +67,37 @@ public class RegistrosDao {
 
             return registros;
         }
+
+        public Registros lerRegistrosPeriodo() {
+        
+            Registros registros = new Registros();
+    
+            String sql = "SELECT * FROM REGISTROS";
+    
+            PreparedStatement stm;
+    
+                try {
+                    stm = conexao.prepareStatement(sql);
+                    ResultSet rs = stm.executeQuery();
+    
+                        while(rs.next()){
+                            registros.setViagens(registros.getViagens() + rs.getInt("viagens"));
+                            registros.setHorasTrabalhadas(registros.getHorasTrabalhadas() + rs.getDouble("horasTrabalhadas"));
+                            registros.setKmDia(registros.getKmDia() + rs.getDouble("kmDia"));
+                            registros.setTotal(registros.getTotal() + rs.getDouble("total"));
+                            registros.setLucro(registros.getLucro() + rs.getDouble("lucro"));
+                            registros.setUber(registros.getUber() + rs.getDouble("uber"));
+                            registros.setNove(registros.getNove() + rs.getDouble("nove"));
+                            registros.setInDriver(registros.getInDriver() + rs.getDouble("inDriver"));
+                            registros.setOutros(registros.getOutros() + rs.getDouble("outros"));
+                            
+                        }
+    
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+    
+                return registros;
+            }
     
     }

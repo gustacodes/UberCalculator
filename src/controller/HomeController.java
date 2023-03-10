@@ -12,49 +12,24 @@ import dao.RegistrosDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Alertas;
 import model.Arredonda;
-import model.Registros;
+import model.Medias;
 import view.Janelas;
 
 public class HomeController implements Initializable {
 
     @FXML
     private AnchorPane root;
-    
-    @FXML
-    private Text porcentagemInDriver;
-
-    @FXML
-    private Text porcentagemNove;
-
-    @FXML
-    private Text porcentagemOutros;
-
-    @FXML
-    private Text porcentagemUber;
-
-    @FXML
-    private ProgressBar progressInDriver;
-
-    @FXML
-    private ProgressBar progressNove;
-
-    @FXML
-    private ProgressBar progressOutros;
-
-    @FXML
-    private ProgressBar progressUber;
 
     @FXML
     private Text txtDepesas;
 
     @FXML
-    public Text txtFaturamento;
+    private Text txtFaturamento;
 
     @FXML
     private Text txtGanhosMedHora;
@@ -69,16 +44,29 @@ public class HomeController implements Initializable {
     private Text txtHoras;
 
     @FXML
+    private Text txtInDriver;
+
+    @FXML
     private Text txtKmRodados;
 
     @FXML
-    private Text txtMetaDiaria;
+    private Text txtMeta;
+
+    @FXML
+    private Text txtNove;
+
+    @FXML
+    private Text txtOutros;
 
     @FXML
     private Text txtSaldo;
 
     @FXML
+    private Text txtUber;
+
+    @FXML
     private Text txtViagens;
+
 
     private Janelas tela = new Janelas();
     Alertas alerta = new Alertas();
@@ -121,12 +109,6 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    void metas(ActionEvent event) throws IOException {        
-        tela.telas("metas", "Metas");
-        fecharStage();
-    }
-
-    @FXML
     void manutencao(ActionEvent event) throws IOException {
         tela.telas("manutencao", "Manutenção");
     }
@@ -154,24 +136,33 @@ public class HomeController implements Initializable {
 		stage.close();
     }
 
+    @FXML
+    void metas(ActionEvent event) throws IOException {
+        tela.telas("metas", "Metas");
+        fecharStage();
+    }
+
+
     static boolean controlador = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {    
         
         MetasDao daoMeta = new MetasDao();
+        RegistrosDao daoRegistros = new RegistrosDao();
+        Arredonda arredonda = new Arredonda(); 
 
-        txtMetaDiaria.setText(String.valueOf(daoMeta.lerMetas().getMetaDiaria()));
+        txtMeta.setText(String.valueOf(daoMeta.lerMetas().getMetaDiaria()));
+        txtUber.setText(arredonda.arredondarValor(daoRegistros.lerRegistrosPeriodo().getUber()));
+        txtNove.setText(arredonda.arredondarValor(daoRegistros.lerRegistrosPeriodo().getNove()));
+        txtInDriver.setText(arredonda.arredondarValor(daoRegistros.lerRegistrosPeriodo().getInDriver()));
+        txtOutros.setText(arredonda.arredondarValor(daoRegistros.lerRegistrosPeriodo().getOutros()));
 
-        if(controlador == true) {
-
-            RegistrosDao daoRegistros = new RegistrosDao();
+        if(controlador == true) {            
 
                 if(daoRegistros.lerRegistros().getTotal() >= daoMeta.lerMetas().getMetaDiaria()){
                     alerta.metaDiariaBatida();
-                }
-
-            Arredonda arredonda = new Arredonda();            
+                }           
 
             txtFaturamento.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getTotal()));
             txtSaldo.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getLucro()));
@@ -183,7 +174,7 @@ public class HomeController implements Initializable {
 
             txtDepesas.setText(String.valueOf(daoDespesas.lerDespesas().getTotalDespesas()));
 
-            Registros medias = new Registros();
+            Medias medias = new Medias();
 
             txtGanhosMedViagens.setText(String.valueOf(medias.mediaViagens()));
             txtGanhosMedHora.setText(String.valueOf(medias.mediaHora()));

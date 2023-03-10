@@ -7,38 +7,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#fecharStage" prefHeight="269.0" prefWidth="547.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MetasController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#fecharStage" prefHeight="196.0" prefWidth="414.0" style="-fx-background-color: #4F4F4F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MetasController">
    <children>
-      <TextField fx:id="metaDiaria" alignment="CENTER" layoutX="95.0" layoutY="92.0" prefHeight="35.0" prefWidth="94.0" promptText="R$ 0,00">
+      <TextField fx:id="metaDiaria" alignment="CENTER" layoutX="152.0" layoutY="73.0" prefHeight="35.0" prefWidth="94.0" promptText="R$ 0,00">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </TextField>
-      <Pane layoutY="-1.0" prefHeight="23.0" prefWidth="547.0" style="-fx-background-color: #708090;">
+      <Pane layoutY="-1.0" prefHeight="23.0" prefWidth="414.0" style="-fx-background-color: #708090;">
          <children>
-            <Text fill="WHITE" layoutX="195.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEFINIR METAS">
+            <Text fill="WHITE" layoutX="135.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEFINIR META">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <TextField fx:id="metaMensal" alignment="CENTER" layoutX="348.0" layoutY="99.0" prefHeight="35.0" prefWidth="92.0" promptText="R$ 0,00">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </TextField>
-      <Button layoutX="200.0" layoutY="180.0" mnemonicParsing="false" onAction="#metas" prefHeight="46.0" prefWidth="148.0" style="-fx-background-color: #4682B4;" text="DEFINIR" textFill="WHITE">
+      <Button layoutX="125.0" layoutY="120.0" mnemonicParsing="false" onAction="#metas" prefHeight="46.0" prefWidth="148.0" style="-fx-background-color: #4682B4;" text="DEFINIR" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Text fill="WHITE" layoutX="96.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meta diária">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="17.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="348.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meta mensal">
+      <Text fill="WHITE" layoutX="153.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meta diária">
          <font>
             <Font name="Arial Rounded MT Bold" size="17.0" />
          </font>

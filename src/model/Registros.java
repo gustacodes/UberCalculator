@@ -1,9 +1,7 @@
 package model;
 
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import dao.RegistrosDao;
 
 public class Registros {
 
@@ -19,8 +17,8 @@ public class Registros {
     private double outros;
     private double total = 0.0;
     private double lucro = 0.0;
-    private double kmDia = 0.0;
-    private double horasTrabalhadas = 0.0;
+    protected double kmDia = 0.0;
+    protected double horasTrabalhadas = 0.0;
     protected int viagens;
 
     public Registros() {
@@ -120,8 +118,6 @@ public class Registros {
         this.viagens = viagens;
     }
 
-    //DecimalFormat df = new DecimalFormat("###.##");
-
     Arredonda valorArredonda = new Arredonda();
 
     public String calculoTotal(double uberValor, double noveValor, double inDriverValor, double outrosValor) {
@@ -158,25 +154,5 @@ public class Registros {
             return "0.00";
         }
 
-    }
-
-    private RegistrosDao daoRegistros = new RegistrosDao();
-    
-
-    public String mediaViagens(){
-        viagens = (int) (daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getViagens());
-
-        return valorArredonda.arredondarValor(viagens);
-    }
-    
-    public String mediaHora(){
-        horasTrabalhadas = daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getHorasTrabalhadas();  
-
-        return valorArredonda.arredondarValor(horasTrabalhadas);
-    }
-
-    public String mediaKm(){
-        kmDia = daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getKmDia();
-        return valorArredonda.arredondarValor(kmDia);
     }
 }

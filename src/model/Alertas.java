@@ -99,9 +99,16 @@ public class Alertas {
     public void metaDiariaBatida() {
         Alert alert = new Alert(AlertType.CONFIRMATION);
             
-        alert.setHeaderText("META ATINGIDA!");
+        alert.setHeaderText("Meta diária atingida!");
         alert.setContentText("PARABÉNS!\nVocê atingiu a meta diária de hoje.");
         alert.showAndWait();
     }
 
+    public void metaAlerta() {
+        Alert alert = new Alert(AlertType.ERROR);
+            
+        alert.setHeaderText("DEFINA A META");
+        alert.setContentText("Defina pelo menos uma das metas para poder ser registrada.");
+        alert.showAndWait();
+    }
 }

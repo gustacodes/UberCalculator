@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.text.Text;
 import model.Arredonda;
+import model.Medias;
 
 public class GanhosPeriodos {
 
@@ -55,8 +56,6 @@ public class GanhosPeriodos {
 
         PeriodoDao daoPeriodo = new PeriodoDao();        
         Arredonda arredonda = new Arredonda();
-
-        
         
         txtFaturamento.setText(arredonda.arredondarValor(daoPeriodo.ganhosPeriod(formataData, formataData2).getTotal()).toString());
         txtSaldo.setText(arredonda.arredondarValor(daoPeriodo.ganhosPeriod(formataData, formataData2).getLucro()).toString());
@@ -65,6 +64,11 @@ public class GanhosPeriodos {
         txtViagens.setText(String.valueOf(daoPeriodo.ganhosPeriod(formataData, formataData2).getViagens()));
         txtDepesas.setText(arredonda.arredondarValor(daoPeriodo.despesa(formataData, formataData2).getTotalDespesas()).toString());
         
+        Medias medias = new Medias();      
+        
+        txtGanhosMedViagens.setText(String.valueOf(medias.mediaViagensPeriodo()));
+        txtGanhosMedHora.setText(String.valueOf(medias.mediaHoraPeriodo()));
+        txtGanhosMedKm.setText(String.valueOf(medias.mediaKmPeriodo()));
     }
 
 }
