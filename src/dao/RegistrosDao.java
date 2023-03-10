@@ -53,11 +53,11 @@ public class RegistrosDao {
                 ResultSet rs = stm.executeQuery();
 
                     while(rs.next()){
-                        registros.setViagens(rs.getInt("viagens"));
+                        registros.setViagens(rs.getDouble("viagens"));
                         registros.setKmDia(rs.getDouble("kmDia"));
                         registros.setTotal(rs.getDouble("total"));
                         registros.setLucro(rs.getDouble("lucro"));
-                        registros.setOutros(registros.getOutros() + rs.getDouble("outros"));
+                        registros.setHorasTrabalhadas(rs.getDouble("horasTrabalhadas"));
                         
                     }
 
@@ -81,7 +81,7 @@ public class RegistrosDao {
                     ResultSet rs = stm.executeQuery();
     
                         while(rs.next()){
-                            registros.setViagens(registros.getViagens() + rs.getInt("viagens"));
+                            registros.setViagens(registros.getViagens() + rs.getDouble("viagens"));
                             registros.setHorasTrabalhadas(registros.getHorasTrabalhadas() + rs.getDouble("horasTrabalhadas"));
                             registros.setKmDia(registros.getKmDia() + rs.getDouble("kmDia"));
                             registros.setTotal(registros.getTotal() + rs.getDouble("total"));

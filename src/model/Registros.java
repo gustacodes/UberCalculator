@@ -19,7 +19,7 @@ public class Registros {
     private double lucro = 0.0;
     protected double kmDia = 0.0;
     protected double horasTrabalhadas = 0.0;
-    protected int viagens;
+    protected double viagens;
 
     public Registros() {
 
@@ -110,11 +110,11 @@ public class Registros {
         this.horasTrabalhadas = horasTrabalhadas;
     }
 
-    public int getViagens() {
+    public double getViagens() {
         return viagens;
     }
 
-    public void setViagens(int viagens) {
+    public void setViagens(double viagens) {
         this.viagens = viagens;
     }
 

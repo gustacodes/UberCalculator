@@ -42,6 +42,7 @@ CREATE TABLE METAS (
     metaMensal double
 );
 
-UPDATE METAS SET metaDiaria = 105;
+UPDATE METAS SET metaDiaria = 10, metaMensal = 11, metaSemanal = 12;
+INSERT INTO METAS VALUES(0, 0, 0);
 SELECT * FROM METAS;
 DROP TABLE METAS;

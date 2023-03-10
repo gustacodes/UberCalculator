@@ -9,7 +9,7 @@ public class Medias extends Registros {
     //MÉTODOS PARA CALCULAR MÉDIA POR DIA
     public String mediaViagens(){
         
-        viagens = (int) (daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getViagens());
+        viagens = (daoRegistros.lerRegistros().getTotal() / daoRegistros.lerRegistros().getViagens());
 
         return valorArredonda.arredondarValor(viagens);
     }
@@ -32,7 +32,7 @@ public class Medias extends Registros {
 
     public String mediaViagensPeriodo(){
         
-        viagens = (int) (daoRegistros.lerRegistrosPeriodo().getTotal() / daoRegistros.lerRegistrosPeriodo().getViagens());
+        viagens = (daoRegistros.lerRegistrosPeriodo().getTotal() / daoRegistros.lerRegistrosPeriodo().getViagens());
 
         return valorArredonda.arredondarValor(viagens);
     }

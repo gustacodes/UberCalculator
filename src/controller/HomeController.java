@@ -166,7 +166,7 @@ public class HomeController implements Initializable {
 
             txtFaturamento.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getTotal()));
             txtSaldo.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getLucro()));
-            txtViagens.setText(String.valueOf(daoRegistros.lerRegistros().getViagens()));
+            txtViagens.setText(String.valueOf((int)daoRegistros.lerRegistros().getViagens()));
             txtHoras.setText(String.valueOf(daoRegistros.lerRegistros().getHorasTrabalhadas()));
             txtKmRodados.setText(arredonda.arredondarValor(daoRegistros.lerRegistros().getKmDia()));
 
